@@ -68,7 +68,7 @@
       .htmlcss-project-body{
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        justify-content: start;
+        justify-items: center;
         gap: 20px;
         padding: 10px 20px;
       }
