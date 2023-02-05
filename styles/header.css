@@ -1,0 +1,71 @@
+header{
+  background-color: #000000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  z-index: 100;
+}
+  .header-left, .header-right{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: max-content;
+  }
+    .header-logo{
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: breathe 4s linear infinite;
+      margin: 20px;
+    }
+      .header-logo-ring{
+        position: absolute;
+        height: 48px;
+        width: 48px;
+        filter: drop-shadow(0px 0px 2px #2892d7);
+        transition: all 0.5s;
+        animation: spin 4s linear infinite;
+        z-index: 10;
+      }
+      .header-logo-center{
+        position: absolute;
+        width: 24px;
+        z-index: 11;
+      }
+
+    .header-button{
+      text-decoration: none;
+      color: white;
+      font-size: 16px;
+      font-weight: 500;
+      padding: 2px 4px;
+      margin: 0px 8px;
+      transition: all 0.25s;
+    }
+      .header-button:hover{
+        transform: scale(1.05);
+        filter: drop-shadow(0px 0px 8px white);
+      }
+    .header-contact-button{
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      color: #ffffff;
+      padding: 4px 8px;
+      margin: 0px 8px;
+      border-radius: 4px;
+      border: 2px solid #ffffff;
+      transition: all 0.25s;
+    }
+      .header-contact-button:hover{
+        filter: drop-shadow(0px 0px 8px #ffffff);
+        background-color: #ffffff;
+        color: #000000;
+      }
+

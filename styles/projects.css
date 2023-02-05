@@ -1,0 +1,157 @@
+.projects{
+  padding: 40px 96px;
+  color: #ffffff;
+  margin: 20px 48px 80px 48px;
+  border: solid 1px #000000;
+  border-radius: 15px;
+  transition: all 0.25s;
+}
+  .projects:hover{
+    border: solid 1px #081e2d;
+  }
+  .projects-title{
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    font-size: 24px;
+    margin-left: 8px;
+    color: #ffffff;
+  }
+    .projects-logo{
+      height: 48px;
+      margin-right: 8px;
+      filter: drop-shadow(0px 0px 5px #17537b);
+    }
+  .projects-header, .projects-footer{
+    font-weight: 400;
+    font-size: 18px;
+    color: #848fa5;
+    padding: 10px 20px 0px 40px;
+  }
+  .projects-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 40px;
+  }
+    .htmlcss-project{
+      margin: 15px 0px;
+      padding: 10px;
+      border: solid 1px #000000;
+      border-radius: 15px;
+      transition: all 0.25s;
+    }
+      .htmlcss-project:hover{
+        border: solid 1px #134566;
+      }
+      .htmlcss-project-title{
+        font-weight: 500;
+        font-size: 20px;
+        color: #ffffff;
+      }
+        .htmlcss-project-logo{
+          height: 16px;
+          margin: 0px 4px;
+          filter: drop-shadow(0px 0px 5px #17537b);
+        }
+      .htmlcss-project-header, .htmlcss-project-footer{
+        font-weight: 400;
+        font-size: 16px;
+        color: #848fa5;
+        padding: 0px 10px;
+        margin: 10px;
+      }
+      .htmlcss-project-footer{
+        font-size: 12px;
+      }
+      .htmlcss-project-body{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        justify-content: start;
+        gap: 20px;
+        padding: 10px 20px;
+      }
+        .htmlcss-project-button{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding: 15px 30px;
+          height: 100px;
+          width: 200px;
+          border-radius: 10px;
+          font-weight: 300;
+          font-size: 12px;
+          color: #ffffff;
+          background-color: #101010;
+          object-fit: cover;
+          transition: 0.25s;
+        }
+          .htmlcss-project-button-logo{
+            height: 90%;
+          }
+          .htmlcss-project-button:hover{
+            transform: scale(1.05);
+            background-color: #202020;
+          }
+
+
+
+@media(max-width:850px){
+  .projects{
+  padding: 20px 20px;
+  margin: 20px 6px 80px 6px;
+}
+  .projects-title{
+    font-size: 16px;
+    margin-left: 8px;
+  }
+    .projects-logo{
+      height: 36px;
+      margin-right: 4px;
+    }
+  .projects-header, .projects-footer{
+    font-size: 12px;
+    padding: 10px 20px 0px 20px;
+  }
+  .projects-footer{
+    padding: 0px;
+  }
+  .projects-content{
+    padding: 5px 20px;
+  }
+    .htmlcss-project{
+      margin: 10px 0px;
+      padding: 10px;
+    }
+      .htmlcss-project-title{
+        font-size: 14px;
+      }
+        .htmlcss-project-logo{
+          height: 12px;
+          margin: 0px 4px;
+        }
+      .htmlcss-project-header, .htmlcss-project-footer{
+        font-size: 12px;
+        padding: 0px 10px;
+        margin: 10px;
+      }
+      .htmlcss-project-footer{
+        font-size: 12px;
+      }
+      .htmlcss-project-body{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 10px;
+      }
+        .htmlcss-project-button{
+          padding: 15px 30px;
+          height: 60px;
+          width: 120px;
+          font-size: 12px;
+        }
+          .htmlcss-project-button-logo{
+            height: 50%;
+          }
+}
