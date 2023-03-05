@@ -3,7 +3,7 @@ html{
 }
 
 body{
-  background-color: #020202;
+  background-color: #030303;
   font-family: Quicksand, Roboto, sans-serif;
   transition: all 0.5s;
   padding: 0px;
@@ -55,6 +55,7 @@ body{
       position: absolute;
       height: 84px;
     }
+
 
 
 
