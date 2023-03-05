@@ -1,10 +1,18 @@
 .projects{
-  padding: 40px 96px;
+  padding: 60px;
   color: #ffffff;
-  margin: 20px 48px 80px 48px;
+  margin: 56px 48px 80px 48px;
   border: solid 1px #000000;
   border-radius: 15px;
-  transition: all 0.25s;
+  transition: all 2s;
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-50%);
+}
+.show{
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
 }
   .projects:hover{
     border: solid 1px #081e2d;
@@ -25,7 +33,7 @@
   .projects-header, .projects-footer{
     font-weight: 400;
     font-size: 18px;
-    color: #848fa5;
+    color: #d2dcef;
     padding: 10px 20px 0px 40px;
   }
   .projects-content{
@@ -34,6 +42,7 @@
     align-items: center;
     justify-content: center;
     padding: 20px 40px;
+    transition: all 1s;
   }
     .htmlcss-project{
       margin: 15px 0px;
@@ -58,7 +67,7 @@
       .htmlcss-project-header, .htmlcss-project-footer{
         font-weight: 400;
         font-size: 16px;
-        color: #848fa5;
+        color: #d2dcef;
         padding: 0px 10px;
         margin: 10px;
       }
@@ -68,8 +77,8 @@
       .htmlcss-project-body{
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        justify-items: center;
         gap: 20px;
+        justify-items: center;
         padding: 10px 20px;
       }
         .htmlcss-project-button{
@@ -97,10 +106,9 @@
           }
 
 
-
 @media(max-width:1100px){
   .projects{
-    padding: 32px 76px;
+    padding: 32px;
     margin: 20px 40px 80px 40px;
 }
   .projects-title{
