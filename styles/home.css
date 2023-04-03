@@ -1,0 +1,124 @@
+.home{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: all 1.5s;
+  filter: blur(5px);
+  transform: translateX(-50%);
+  opacity: 0;
+}
+  .show{
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+  }
+  .home-main{
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+    padding: 140px 50px;
+    transition: all 0.5s;
+  }
+  .home-left{
+    display: flex;
+    flex-direction: column;
+    font-family: Arial;
+    font-weight: 500;
+    font-size: 24px;
+    transition: all 1s;
+    z-index: 91;
+  }
+    .name{
+      font-weight: 700;
+      font-size: 80px;
+    }
+      .name-fullstop{
+        color: #2892D7;
+        filter: drop-shadow(0px 0px 5px #2892d7);
+      }
+    .home-intro{
+      width: 360px;
+      font-weight: 400;
+      font-size: 18px;
+      color: #848FA5;
+    }
+    .home-scroll{
+      margin-top: 40px;
+      font-weight: 400;
+      font-size: 16px;
+      text-decoration: underline;
+    }
+    .home-logo{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+      .home-logo-img{
+        height: 400px;
+        filter: drop-shadow(0px 0px 10px black);
+        transition: all 0.25s;
+      }
+        .home-logo-img:hover{
+          transform: scale(1.025);
+        }
+      .home-name{
+        background:  linear-gradient(
+          135deg,
+          #141e30 0%,
+          #35577e 10%,
+          #5083bd 20%,
+          #7893c2 30%,
+          #8598a9 40%,
+          #77ada4 50%,
+          #5C9EAD 60%,
+          #326273 70%,
+          #414770 80%,
+          #345995 90%,
+          #030027 100%
+        );
+        background-size: auto auto;
+        -webkit-background-clip: text;
+        background-clip: border-box;
+        background-size: 200% auto;
+        background-clip: text;
+        color: transparent;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent;
+        font-size: 150px;
+        font-weight: 500;
+        transition: all 0.5s;
+        cursor: default;
+        animation: textclip 5s linear infinite;
+        display: inline-block;
+      }
+      .name-fullstop{
+        font-family: Quicksand;
+      }
+      @keyframes textclip {
+        to {
+          background-position: 200% center;
+        }
+      }
+  
+
+@media(max-width:850px){
+  .home-main{
+    padding: 70px 0px;
+  }
+  .home-logo-img{
+    height: 200px;
+  }
+  .home-left{
+    font-size: 12px;
+  }
+  .home-intro{
+    font-size: 10px;
+  }
+  .name{
+    font-size: 45px;
+  }
+}
