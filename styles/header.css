@@ -1,0 +1,109 @@
+header{
+  background-image: linear-gradient(to right, #14202e, #141e30, #080808);
+  opacity: 0.98;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  filter: drop-shadow(0px 10px 20px rgb(0, 0, 0));
+  transition: all 0.25s;
+  z-index: 100;
+}
+
+  .header-left{
+    display: flex;
+    align-items: center;
+  }
+    .header-symbol{
+      display: flex;
+      align-items: center;
+    }
+      .header-logo-img{
+        height: 30px;
+        transition: all 0.25s;
+        transform: scale(1.5);
+        filter: drop-shadow(0px 0px 2px #2e62cc);
+      }
+        .header-logo-img:hover{
+          transform: scale(1.75);
+        }
+
+  .header-mid{
+    display: flex;
+    align-items: center;
+  }
+    .header-mid-button{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 5px 10px;
+      margin: 0px 10px;
+      font-family: Quicksand, sans-serif;
+      font-size: 20px;
+      font-weight: 500;
+      text-decoration: none;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      transition: all 0.35s;
+    }
+      .header-mid-button:hover{
+        filter: drop-shadow(0px 0px 5px #ffffff);
+      }
+      .header-mid-button-select{
+        height: 3px;
+        width: 0%;
+        border-radius: 5px;
+        background-color: white;
+        transition: all 0.25s;
+      }
+        .header-mid-button:hover .header-mid-button-select{
+          width: 110%;
+          filter: drop-shadow(0px 0px 5px white);
+        }
+  
+  .header-right{
+    display: flex;
+    align-items: center;
+  }
+    .header-right-button{
+      padding: 5px 10px;
+      font-family: Quicksand, sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      text-decoration: none;
+      background-color: transparent;
+      color: #ffffff;
+      border: 2px solid #ffffff;
+      border-radius: 5px;
+      transition: all 0.35s;
+      cursor: pointer;
+    }
+      .header-right-button:hover{
+        background-color: #ffffff;
+        color: #141e30;
+        box-shadow: 0px 0px 15px #95eafd;
+        animation: none;
+      }
+
+
+
+
+      @media(max-width:850px){
+        .header-logo-name{
+          font-size: 30px;
+        }
+        .header-mid-button{
+          font-size: 15px;
+          padding: 2px 5px ;
+        }
+        .header-right-button{
+          font-size: 12px;
+          padding: 3px 5px;
+        }
+      }
