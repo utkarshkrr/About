@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <title>Utkarsh</title>
+
+    <link rel="icon" href="images/cl3.png" type="image/x-icon">
+
+    <script src="jquery3.6.1.js" type="text/javascript"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Modern+Antiqua&family=Quicksand:wght@300;400;500;600;700&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/general.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/footer.css">
+
+  </head>
+
+  <body>
+
+    <header>
+
+      <section class="header-left">
+          <div class="header-symbol">
+              <img class="header-logo-img" src="images/cl3.png">
+          </div>
+        </section>
+
+      <section class="header-right">
+          <a href="#contact">
+            <button class="header-right-button">
+              Get in touch
+            </button>
+          </a>
+      </section>
+
+    </header>
+
+    <main> 
+
+      <div class="videobox">
+        <video autoplay width="900px" controls poster="images/thumbnail.png" class="video">
+          <source src="images/surprise.mp4" type="video/mp4">
+        </video>
+      </div>
+
+    </main>
+
+    <footer>
+
+      <div class="contact-viewcount">
+      
+        <div id="contact" class="contact">
+          Reach me out on
+          <div class="contact-buttons">
+            
+            <a style="text-decoration: none;"
+               href="https://facebook.com/utkarshkrr" target="_blank">
+              <div class="contact-button">
+                <img class="contact-button-icon" src="images/facebook.svg">
+                <div class="contact-button-tooltip">Facebook</div>
+              </div>
+            </a>
+            <a style="text-decoration: none;"
+               href="https://m.me/utkarshkrr" target="_blank">
+              <div class="contact-button">
+                <img class="contact-button-icon" src="images/facebook-messenger.svg">
+                <div class="contact-button-tooltip">FB Messenger</div>
+              </div>
+            </a>
+            <a style="text-decoration: none;"
+               href="https://instagram.com/utkarshkrr" target="_blank">
+              <div class="contact-button">
+                <img class="contact-button-icon" src="images/instagram.svg">
+                <div class="contact-button-tooltip">Instagram</div>
+              </div>
+            </a>
+            <a style="text-decoration: none;"
+               href="https://twitter.com/utkarshkrr" target="_blank">
+              <div class="contact-button">
+                <img class="contact-button-icon" src="images/twitter.svg">
+                <div class="contact-button-tooltip">Twitter</div>
+              </div>
+            </a>
+            <a style="text-decoration: none;"
+               href="https://linkedin.com/in/utkarshkrr" target="_blank">
+              <div class="contact-button">
+                <img class="contact-button-icon" src="images/linkedin.svg">
+                <div class="contact-button-tooltip">Linked In</div>
+              </div>
+            </a>
+            <a style="text-decoration: none;"
+               href="https://github.com/utkarshkrr" target="_blank">
+              <div class="contact-button">
+                <img class="contact-button-icon" src="images/github.png">
+                <div class="contact-button-tooltip">GitHub</div>
+              </div>
+            </a>
+            <a style="text-decoration: none;"
+               href="mailto: utkarshkumar055@gmail.com" target="_blank">
+              <div class="contact-button">
+                <img class="contact-button-icon" src="images/mail.svg">
+                <div class="contact-button-tooltip">Mail</div>
+              </div>
+            </a>
+
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="disclaimer">
+        Copyright © 2023 Utkarsh
+      </div>
+
+    </footer>
+    
+    <div class="loader-container">
+      <div class="loader">
+        <div class="l1"></div>
+        <div class="l2"></div>
+        <div class="l3"></div>
+      </div>
+        <div class="wait-message">
+          Just a moment
+        </div>
+    </div>
+          <!--display loader-->
+          <script>
+            $(window).on("load",function(){
+              $(".loader-container").fadeOut("slow");
+            });
+          </script>
+
+  </body>
+
+</html>

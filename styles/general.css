@@ -1,0 +1,146 @@
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  height: max-content;
+  font-family: Roboto, Arial, sans-serif;
+  background-image: linear-gradient(to right, #141e30, #080808);
+  transition: all 1s;
+  padding: 0px 20px 20px 20px;
+}
+/*SCROLLBAR SCROLLBAR SCROLLBAR*/
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #98c8ff7b;
+  box-shadow: inset 0px 0px 5px rgb(96, 143, 255);
+  transition: all 0.5s;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #314873;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #22324f;
+}
+
+
+/*    LOADER     */
+.loader-container{
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: Quicksand, sans-serif;
+  font-size: 25px;
+  color: #b0d2f8;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 1);
+  z-index: 101;
+}
+.loader{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: spin 7.5s linear infinite;
+    margin-bottom: 56px;
+  }
+
+    .l1{
+      height: 90px;
+      width: 90px;
+      margin: 5px;
+      border-radius: 50%;
+      border: 4px #233350 solid;
+      border-top: 4px transparent solid;
+      animation: antispin 1.5s linear infinite;
+    }
+    .l2{
+      position: absolute;
+      height: 60px;
+      width: 60px;
+      margin: 5px;
+      border-radius: 50%;
+      border: 4px #35577e solid;
+      border-right: 4px transparent solid;
+      border-top: 4px transparent solid;
+      animation: spin 1.125s linear infinite;
+    }
+    .l3{
+      position: absolute;
+      height: 30px;
+      width: 30px;
+      margin: 5px;
+      border-radius: 50%;
+      border: 4px #b0d2f8 solid;
+      border-right: 4px transparent solid;
+      border-top: 4px transparent solid;
+      border-bottom: 4px transparent solid;
+      animation: spin 0.75s linear infinite;
+    }
+  
+/*SURPRISE VIDEO*/
+    .videobox{
+      margin-top: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .video{
+      transition: all 0.5s;
+    }
+    @media(max-width: 850px){
+      .video{
+        width: 500px;
+      }
+    }
+
+    @keyframes spin{
+      0% {transform: rotate(0deg);}
+      100% {transform: rotate(360deg);}
+    }
+    @keyframes antispin{
+      0% {transform: rotate(0deg);}
+      100% {transform: rotate(-360deg);}
+    }
+    
+
+      
+@keyframes wiggle {
+  0%, 7% {
+    transform: rotateZ(0);
+  }
+  15% {
+    transform: rotateZ(-15deg);
+  }
+  20% {
+    transform: rotateZ(10deg);
+  }
+  25% {
+    transform: rotateZ(-10deg);
+  }
+  30% {
+    transform: rotateZ(6deg);
+  }
+  35% {
+    transform: rotateZ(-4deg);
+  }
+  40%, 100% {
+    transform: rotateZ(0);
+  }
+}
