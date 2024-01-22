@@ -18,19 +18,28 @@ header{
     display: flex;
     align-items: center;
   }
-    .header-symbol{
-      display: flex;
-      align-items: center;
+  .header-logo{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: breathe 4s linear infinite;
+    margin: 20px;
+  }
+    .header-logo-ring{
+      position: absolute;
+      height: 48px;
+      width: 48px;
+      filter: drop-shadow(0px 0px 2px #2892d7);
+      transition: all 0.5s;
+      animation: spin 4s linear infinite;
+      z-index: 10;
     }
-      .header-logo-img{
-        height: 30px;
-        transition: all 0.25s;
-        transform: scale(1.5);
-        filter: drop-shadow(0px 0px 2px #2e62cc);
-      }
-        .header-logo-img:hover{
-          transform: scale(1.75);
-        }
+    .header-logo-center{
+      position: absolute;
+      width: 24px;
+      z-index: 11;
+    }
 
   .header-mid{
     display: flex;
@@ -107,3 +116,21 @@ header{
           padding: 3px 5px;
         }
       }
+
+      
+@keyframes spin{
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(360deg)}
+}
+@keyframes breathe{
+  0% {transform: scale(1);
+      filter: none;}
+  25% {transform: scale(1.15);
+       filter: drop-shadow(0px 0px 1px #2892d7);}
+  50% {transform: scale(1);
+       filter: none;}
+  75% {transform: scale(1.15);
+       filter: drop-shadow(0px 0px 1px #2892d7);}
+  100% {transform: scale(1);
+        filter: none;}
+}
