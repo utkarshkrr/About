@@ -1,0 +1,24 @@
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.knowmore-button{
+    margin: 20px 0;
+    padding: 4px 16px;
+}
+.knowmore-video{
+    border-radius: 20px;
+}
+.knowmore-modal-footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.copyright{
+    margin: 10px 0;
+    padding: 10px 40px;
+    color: #070F2B;
+    font-weight: 500;
+}
