@@ -125,3 +125,12 @@ modal-footer{
 ::-webkit-scrollbar{
     width: 0px;
 }
+.myModal{
+    transform: scale(0.75);
+    transition: all 0.25s;
+}
+@media (min-width:981px){
+    .myModal{
+        transform: scale(1);
+    }
+}
