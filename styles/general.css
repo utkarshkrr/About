@@ -96,7 +96,8 @@ body{
     padding: 8px;
     background-color: transparent;
     box-shadow: 0px 0px 25px #3677b44d;
-    transition: transform 0.16s;
+    transition: transform 0.15s;
+    transform: scale(0.75);
 }
 .contact-button:hover{
     transform: scale(1.1);
@@ -131,6 +132,9 @@ modal-footer{
 }
 @media (min-width:981px){
     .myModal{
+        transform: scale(1);
+    }
+    .contact-button{
         transform: scale(1);
     }
 }
