@@ -72,7 +72,7 @@ body{
 .modal-body{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
+    gap: 20px;
     justify-items: center;
     justify-content: center;
     padding: 24px;
@@ -134,7 +134,11 @@ modal-footer{
     .myModal{
         transform: scale(1);
     }
+    .modal-body{
+        gap: 40px;
+    }
     .contact-button{
         transform: scale(1);
     }
+
 }
