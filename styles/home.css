@@ -131,6 +131,9 @@ main, .home{
         height: 100%;
         margin: 0;
     }
+    .resume-btn{
+        margin-top: 30px;
+    }
     .home-card-footer{
         margin-left: 40px;
         align-self: flex-start;
