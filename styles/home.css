@@ -31,7 +31,7 @@ main{
     cursor: default;
     animation: drop 1s;
     display: inline-block;
-    transform: rotate(-3deg);
+    transform: rotate(-5deg);
 }
 main, .home{
     display: flex;
@@ -72,6 +72,9 @@ main, .home{
     color: #1c317d;
     text-align: justify;
 }
+.resume-btn{
+    margin-top: 10px;
+}
 .skill-card{
     width: 100%;
     display: flex;
@@ -104,6 +107,12 @@ main, .home{
 }
 .skill-container li{
     color: #1c317d;
+}
+.skill{
+    border: none;
+    border-radius: 16px;
+    padding: 4px 12px;
+    box-shadow: 0px 0px 0px #b0d3f44d;
 }
 @media (min-width:981px){
     .home-spacer{
@@ -140,7 +149,7 @@ main, .home{
     }
     100% {
         transform: translateY(0%);
-        transform: rotate(-3deg);
+        transform: rotate(-5deg);
     }
 }@keyframes drop-again {
     0% {
@@ -148,6 +157,6 @@ main, .home{
     }
     100% {
         transform: translateY(0%);
-        transform: rotate(-3deg);
+        transform: rotate(-5deg);
     }
 }
