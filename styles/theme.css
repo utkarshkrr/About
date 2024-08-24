@@ -63,6 +63,9 @@ body.dark-mode {
 .copyright.dark-mode{
     color: #fffbff;
 }
+.resume-img.dark-mode{
+    filter: invert(100%);
+}
 
 /* Style for button in dark mode */
 body.dark-mode .themeToggleBtn {
