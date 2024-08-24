@@ -64,7 +64,7 @@ body.dark-mode {
     color: #fffbff;
 }
 .resume-img.dark-mode{
-    filter: invert(100%);
+    filter: invert(90%);
 }
 
 /* Style for button in dark mode */
