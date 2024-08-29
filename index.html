@@ -247,6 +247,12 @@
             <div class="element-k"></div>
         </div>
     </div>
+    
+    <!-- Progress Bar Container -->
+    <div id="progress-bar-container">
+        <div id="progress-bar"></div>
+    </div>
+    
 
     <!--display loader-->
     <script>
@@ -267,6 +273,18 @@
         if (localStorage.getItem('darkMode') === 'enabled') {
             $('*').addClass('dark-mode');
         }
+        
+        document.onreadystatechange = function () {
+            let progressBar = document.getElementById('progress-bar');
+            if (document.readyState === 'interactive') {
+                progressBar.style.width = '50%'; // Midway point
+            } else if (document.readyState === 'complete') {
+                progressBar.style.width = '100%'; // Fully loaded
+                setTimeout(function () {
+                    document.getElementById('progress-bar-container').style.display = 'none'; // Hide the progress bar
+                }, 1000); // Delay to allow the user to see the fully loaded state
+            }
+        };
     </script>
 
 </body>
