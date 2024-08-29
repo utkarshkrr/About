@@ -146,6 +146,9 @@ modal-footer{
     transform: scale(0.75);
     transition: all 0.25s;
 }
+#resumeModal{
+    transform: scale(1);
+}
 @media (min-width:981px){
     .myModal{
         transform: scale(1);
