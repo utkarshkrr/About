@@ -23,6 +23,7 @@ body{
     left: 0;
     right: 0;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     background-color: #070F2B;
@@ -55,20 +56,19 @@ body{
 
 /* Progress Bar Container */
 #progress-bar-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 4px; /* Height of the progress bar */
+    width: 36%;
+    height: 4px;
+    border-radius: 4px;
     background-color: #f3f3f3;
-    z-index: 9999; /* Make sure it's above all other elements */
+    margin-top: 10vh;
 }
 
 /* Progress Bar */
 #progress-bar {
     width: 0%;
     height: 100%;
-    background-color: #1C5D99; /* Color of the progress bar */
+    border-radius: 4px;
+    background-color: #1C5D99;
     transition: width 0.5s ease-in-out
 }
 
