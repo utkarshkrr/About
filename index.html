@@ -277,7 +277,7 @@
         document.onreadystatechange = function () {
             let progressBar = document.getElementById('progress-bar');
             if (document.readyState === 'interactive') {
-                progressBar.style.width = '50%'; // Midway point
+                progressBar.style.width = '75%'; // Midway point
             } else if (document.readyState === 'complete') {
                 progressBar.style.width = '100%'; // Fully loaded
                 setTimeout(function () {
