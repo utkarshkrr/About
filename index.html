@@ -237,7 +237,7 @@
         </div>
 
         <div class="copyright">
-            Copyright © 2024 Utkarsh
+            Copyright © <span id="currentYear"></span> Utkarsh
         </div>
     </footer>
 
@@ -256,6 +256,8 @@
 
     <!--display loader-->
     <script>
+        document.getElementById("currentYear").textContent = new Date().getFullYear();
+        
         $(window).on("load", function () {
             $(".loader-container").fadeOut("slow");
         });
