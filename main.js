@@ -1,5 +1,8 @@
 //javascript for the page
-document.getElementById("currentYear").textContent = new Date().getFullYear() + " Utkarsh";
+const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const currentDate = new Date();
+document.getElementById("currentYear").textContent = `${currentDate.getDate()} ${months[currentDate.getMonth()]} ${currentDate.getFullYear()} - Utkarsh`;
+
         
 $(window).on("load", function () {
     $(".loader-container").fadeOut("slow");
