@@ -1,5 +1,5 @@
 //javascript for the page
-document.getElementById("currentYear").textContent = new Date().getFullYear();
+document.getElementById("currentYear").textContent = new Date().getFullYear() + " Utkarsh";
         
 $(window).on("load", function () {
     $(".loader-container").fadeOut("slow");
