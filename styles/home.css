@@ -105,7 +105,7 @@ main, .home{
     font-weight: 500;
     color: #1c317d;
 }
-.skill-container li{
+.skill-container li, .skill-card li, .skill-card a{
     color: #1c317d;
 }
 .skill{
