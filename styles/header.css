@@ -37,7 +37,7 @@
     animation: spin_loader 1s;
 }
 .logo:hover .element-k{
-    animation: spin_loader infinite 1s;
+    animation: spin_loader 1s;
 }
 .nav-button-container{
     display: flex;
