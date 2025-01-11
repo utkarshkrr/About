@@ -20,6 +20,9 @@ body.dark-mode {
 .element-u.dark-mode{
     border-color: #fffbff;
 }
+.element-k.dark-mode{
+    animation: spinAgain_loader 1s;
+}
 .nav-button.dark-mode{
     color: #fffbff;
 }
@@ -54,7 +57,7 @@ body.dark-mode {
 .home-card-text.dark-mode, .skill-card-title.dark-mode, .skill-title.dark-mode, .skill-container-title.dark-mode{
     color: #fffbff;
 }
-.home-card-subtext.dark-mode, .skill-card-subtext.dark-mode, .skill-container li.dark-mode{
+.home-card-subtext.dark-mode, .skill-card-subtext.dark-mode, .skill-container li.dark-mode, .skill-card li.dark-mode, .skill-card a.dark-mode{
     color: #d2d1d2;
 }
 .home-card-img.dark-mode{
