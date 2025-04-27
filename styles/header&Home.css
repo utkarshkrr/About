@@ -1,0 +1,80 @@
+#header{
+    width: 100%;
+    height: 100vh;
+    background-image: url(../images/home.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.container{
+    padding: 10px 10%;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #000000;
+    z-index: 100;
+}
+
+#nav_logo{
+    max-width: 80px;
+    border-radius: 50%;
+    cursor: pointer; 
+}
+
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: #F7F7F7;
+    font-size: 18px;
+    position: relative;
+}
+
+nav ul li a::after{
+    content: '';
+    width: 0%;
+    height: 3px;
+    background: #1298ff;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.25s;
+}
+
+nav ul li a:hover::after{
+    width: 100%;
+}
+
+.header_text{
+    margin-top: 20%;
+    font-size: 30px;
+}
+
+.header_text h1{
+    font-size: 60px;
+    margin-top: 20px;
+}
+
+.header_text h1 span{
+    color: #1298ff;
+}
+#headerSubText{
+    color: #0b66ab;
+}
+
+nav .fas{
+    display: none;
+}
