@@ -9,9 +9,10 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
-    
+
     <script src="jquery3.6.1.js" type="text/javascript"></script>
     <link rel="stylesheet" href="styles/header&Home.css">
     <link rel="stylesheet" href="styles/about&Skills.css">
@@ -24,7 +25,8 @@
     <div id="header">
         <div class="container">
             <nav>
-                <img src="images/logo.png" class="logo" id="nav_logo" alt="Utkarsh Logo" onclick="window.location.href='https://utkarshkrr.github.io/About/';">
+                <img src="images/logo.png" class="logo" id="nav_logo" alt="Utkarsh Logo"
+                    onclick="window.location.href='https://utkarshkrr.github.io/About/';">
                 <ul id="sideMenu">
                     <li> <a href="#">Home</a> </li>
                     <li> <a href="#about">About</a> </li>
@@ -45,253 +47,266 @@
         </div>
     </div>
 
-    <!-------------about section----------->
-    <div id="about">
-        <div class="container">
-            <div class="row">
-                <div class="about_col1">
-                    <img alt="Utkarsh DP" src="images/dp.jpg">
+    <main onclick="closeMenu()">
+        <!-------------about section----------->
+        <div id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="about_col1">
+                        <img alt="Utkarsh DP" src="images/dp.jpg">
+                    </div>
+                    <div class="about_col2">
+                        <h1 class="subtitle">About Me</h1>
+                        <p>Hi, I'm Utkarsh!
+                            I am a Computer Science undergrad student
+                            with a passion for technology and a desire
+                            to learn. Currently pursuing my degree, I find
+                            joy in exploring the diverse realms of computer
+                            science and acquiring new skills along the way.
+                            As a learner, I've delved into various programming
+                            skills, sharpening my abilities to navigate the
+                            dynamic landscape of technology. The ever-evolving
+                            nature of computer science fuels my curiosity, and
+                            I am committed to staying aware of emerging trends
+                            and innovations.</p>
+                        <h2>Education</h2>
+                        <ul>
+                            <li>
+                                <span>Higher Secondary School</span><br>2021<br>National Examinations Board
+                            </li>
+                            <li>
+                                <span>B Tech in Computer Science & Engg.</span><br>2022-2026<br>Kalinga Institute of
+                                Industrial Technology
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="about_col2">
-                    <h1 class="subtitle">About Me</h1>
-                    <p>Hi, I'm Utkarsh!
-                        I am a Computer Science undergrad student
-                        with a passion for technology and a desire
-                        to learn. Currently pursuing my degree, I find
-                        joy in exploring the diverse realms of computer
-                        science and acquiring new skills along the way.
-                        As a learner, I've delved into various programming
-                        skills, sharpening my abilities to navigate the
-                        dynamic landscape of technology. The ever-evolving
-                        nature of computer science fuels my curiosity, and
-                        I am committed to staying aware of emerging trends
-                        and innovations.</p>
-                    <h2>Education</h2>
+            </div>
+        </div>
+
+        <!-------------skills section----------->
+        <div id="skills">
+            <div class="container">
+                <h1 class="subtitle">Skills</h1>
+                <div class="tab_titles">
+                    <p class="tab_links activeLink" onclick="openTab('ProgLang')">Programming Languages</p>
+                    <p class="tab_links" onclick="openTab('WebDev')">Web Development</p>
+                    <p class="tab_links" onclick="openTab('ML')">Machine Learning</p>
+                    <p class="tab_links" onclick="openTab('F&L')">Framework & Libraries</p>
+                    <p class="tab_links" onclick="openTab('DB')">Databases</p>
+                    <p class="tab_links" onclick="openTab('More')">More</p>
+                </div>
+                <div class="tab_contents activeTab" id="ProgLang">
                     <ul>
                         <li>
-                            <span>Higher Secondary School</span><br>2021<br>National Examinations Board
+                            <span>C</span><br>Data structures & algorithms
                         </li>
                         <li>
-                            <span>B Tech in Computer Science & Engg.</span><br>2022-2026<br>Kalinga Institute of
-                            Industrial Technology
+                            <span>Java</span><br>Object Oriented Programming
+                        </li>
+                        <li>
+                            <span>Python</span><br>Machine Learning
                         </li>
                     </ul>
                 </div>
+                <div class="tab_contents" id="WebDev">
+                    <ul>
+                        <li>
+                            <span>HTML, CSS, JS, Bootstrap, Tailwind</span><br>Front-end Web Development
+                        </li>
+                        <li>
+                            <span>MERN Stack</span><br>Back-end Web Development
+                        </li>
+                        <li>
+                            <span>Flask</span><br>Back-end Python
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab_contents" id="ML">
+                    <ul>
+                        <li>
+                            <span>Supervised & Unsupervised Learning</span><br>Regression, Classification, Clustering
+                        </li>
+                        <li>
+                            <span>Neural Networks</span><br>Perceptron, ANN, MLP
+                        </li>
+                        <li>
+                            <span>Deep Learning with PyTorch</span><br>Developed CNN model for brain tumor detection
+                            using MRI images
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab_contents" id="DB">
+                    <ul>
+                        <li>
+                            <span>SQL</span><br>Relational Database Management
+                        </li>
+                        <li>
+                            <span>MongoDB</span><br>No SQL Database Management
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab_contents" id="F&L">
+                    <ul>
+                        <li>
+                            <span>Express.js</span><br>RESTful API development
+                        </li>
+                        <li>
+                            <span>React.js</span><br>User Interface development
+                        </li>
+                        <li>
+                            <span>Node.js</span><br>Integrating front-end & back-end
+                        </li>
+                        <li>
+                            <span>DOM Manipulation</span><br>Building dynamic web applications
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab_contents" id="More">
+                    <ul>
+                        <li>
+                            <span>AWS Cloud</span><br>AWS Cloud Foundations & AWS Cloud Architecting
+                        </li>
+                        <li>
+                            <span>Canva, Figma</span><br>UI design
+                        </li>
+                    </ul>
+                </div>
+
             </div>
         </div>
-    </div>
 
-    <!-------------skills section----------->
-    <div id="skills">
-        <div class="container">
-            <h1 class="subtitle">Skills</h1>
-            <div class="tab_titles">
-                <p class="tab_links activeLink" onclick="openTab('ProgLang')">Programming Languages</p>
-                <p class="tab_links" onclick="openTab('WebDev')">Web Development</p>
-                <p class="tab_links" onclick="openTab('ML')">Machine Learning</p>
-                <p class="tab_links" onclick="openTab('F&L')">Framework & Libraries</p>
-                <p class="tab_links" onclick="openTab('DB')">Databases</p>
-                <p class="tab_links" onclick="openTab('More')">More</p>
-            </div>
-            <div class="tab_contents activeTab" id="ProgLang">
-                <ul>
-                    <li>
-                        <span>C</span><br>Data structures & algorithms
-                    </li>
-                    <li>
-                        <span>Java</span><br>Object Oriented Programming
-                    </li>
-                    <li>
-                        <span>Python</span><br>Machine Learning
-                    </li>
-                </ul>
-            </div>
-            <div class="tab_contents" id="WebDev">
-                <ul>
-                    <li>
-                        <span>HTML, CSS, JS, Bootstrap, Tailwind</span><br>Front-end Web Development
-                    </li>
-                    <li>
-                        <span>MERN Stack</span><br>Back-end Web Development
-                    </li>
-                    <li>
-                        <span>Flask</span><br>Back-end Python
-                    </li>
-                </ul>
-            </div>
-            <div class="tab_contents" id="ML">
-                <ul>
-                    <li>
-                    <span>Supervised & Unsupervised Learning</span><br>Regression, Classification, Clustering
-                </li>
-                <li>
-                    <span>Neural Networks</span><br>Perceptron, ANN, MLP
-                </li>
-                <li>
-                    <span>Deep Learning with PyTorch</span><br>Developed CNN model for brain tumor detection using MRI images
-                </li>
-                </ul>
-            </div>
-            <div class="tab_contents" id="DB">
-                <ul>
-                    <li>
-                        <span>SQL</span><br>Relational Database Management
-                    </li>
-                    <li>
-                        <span>MongoDB</span><br>No SQL Database Management
-                    </li>
-                </ul>
-            </div>
-            <div class="tab_contents" id="F&L">
-                <ul>
-                    <li>
-                        <span>Express.js</span><br>RESTful API development
-                    </li>
-                    <li>
-                        <span>React.js</span><br>User Interface development
-                    </li>
-                    <li>
-                        <span>Node.js</span><br>Integrating front-end & back-end
-                    </li>
-                    <li>
-                        <span>DOM Manipulation</span><br>Building dynamic web applications
-                    </li>
-                </ul>
-            </div>
-            <div class="tab_contents" id="More">
-                <ul>
-                    <li>
-                        <span>AWS Cloud</span><br>AWS Cloud Foundations & AWS Cloud Architecting
-                    </li>
-                    <li>
-                        <span>Canva, Figma</span><br>UI design
-                    </li>
-                </ul>
-            </div>
-
-        </div>
-    </div>
-
-    <!--my expertise-->
-    <div id="expertise">
-        <div class="container">
-            <h1 class="subtitle">My Expertise</h1>
-            <div class="expertiseList">
-                <div>
-                    <i class="fa-solid fa-code" aria-label="Web Development Icon"></i>
-                    <h2>Web Development</h2>
-                    <p>Skilled in full stack web development using the MERN
-                        stack (MongoDB, Express.js, React.js, Node.js) to
-                        create responsive, intuitive, and functional web applications.
-                    </p>
-                </div>
-                <div>
-                    <i class="fa-solid fa-desktop" aria-label="UI UX Design Icon"></i>
-                    <h2>UI / UX Design</h2>
-                    <p>UI/UX design focused on creating intuitive, user-centric,
-                        and visually appealing interfaces for web applications.
-                    </p>
-                </div>
-                <div>
-                    <i class="fa-solid fa-brain" aria-label="Machine Learning Icon"></i>
-                    <h2>Machine Learning</h2>
-                    <p>Familiar with foundational machine learning and deep 
-                        learning techniques, with hands-on experience in building 
-                        intelligent models for pattern recognition.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!--projects-->
-
-    <div id="projects">
-        <div class="container">
-            <h1 class="subtitle">My Projects</h1>
-            <div class="projectList">
-                <div class="project">
-                    <img src="images/zomato.png" alt="Zomato Clone Project Screenshot">
-                    <div class="layer">
-                        <h3>Zomato Clone</h3>
-                        <p>A Full Stack Zomato Clone is a food delivery platform
-                            built using the MERN stack (MongoDB, Express.js, React.js,
-                            Node.js), allowing users to browse restaurants, place
-                            orders, and make secure payments. It includes features
-                            like user authentication, order management, and real-time
-                            tracking.
+        <!--my expertise-->
+        <div id="expertise">
+            <div class="container">
+                <h1 class="subtitle">My Expertise</h1>
+                <div class="expertiseList">
+                    <div>
+                        <i class="fa-solid fa-code" aria-label="Web Development Icon"></i>
+                        <h2>Web Development</h2>
+                        <p>Skilled in full stack web development using the MERN
+                            stack (MongoDB, Express.js, React.js, Node.js) to
+                            create responsive, intuitive, and functional web applications.
                         </p>
-                        <!--  <a href=""><i class="fa-solid fa-arrow-up-right-from-square" aria-label="Link"></i></a>  -->
                     </div>
-                </div>
-                <div class="project">
-                    <img src="images/ElectroMart.jpg" alt="ElectroMart E-commerce Website Screenshot">
-                    <div class="layer">
-                        <h3>E-commerce Website</h3>
-                        <p>ElectroMart is a MERN stack-based e-commerce platform 
-                            designed for small electronic retailers. It features 
-                            user authentication, product search, shopping cart, 
-                            and admin management for inventory and orders. The platform 
-                            is responsive, scalable, and easy to use, helping local shops 
-                            go online affordably.
+                    <div>
+                        <i class="fa-solid fa-desktop" aria-label="UI UX Design Icon"></i>
+                        <h2>UI / UX Design</h2>
+                        <p>UI/UX design focused on creating intuitive, user-centric,
+                            and visually appealing interfaces for web applications.
                         </p>
-                        <a href="https://github.com/utkarshkrr/ElectroMart"><i class="fa-solid fa-arrow-up-right-from-square" aria-label="Link"></i></a>
                     </div>
-                </div>
-                <div class="project">
-                    <img src="images/BTDMRI.jpg" alt="Brain Tumour Detection MRI Screenshot">
-                    <div class="layer">
-                        <h3>MRI Brain Tumour Detector</h3>
-                        <p>This project uses a CNN-based deep learning model
-                            to detect brain tumors from MRI images with 91% 
-                            accuracy. The model 
-                            was deployed using Flask for real-time predictions.
+                    <div>
+                        <i class="fa-solid fa-brain" aria-label="Machine Learning Icon"></i>
+                        <h2>Machine Learning</h2>
+                        <p>Familiar with foundational machine learning and deep
+                            learning techniques, with hands-on experience in building
+                            intelligent models for pattern recognition.
                         </p>
-                        <a href="https://github.com/utkarshkrr/BrainTumourDetector"><i class="fa-solid fa-arrow-up-right-from-square" aria-label="Link"></i></a>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-------------------contact----------------->
-    <div id="contactMe">
-        <div class="container">
-            <div class="row">
-                <div class="contactLeft">
-                    <h1 class="subtitle">Contact Me</h1>
-                    Feel free to reach out via email or socials!
-                    <a href="mailto:utkarshkumar055@gmail.com" target="_blank">
-                        <p><i class="fa-solid fa-paper-plane"> </i>utkarshkumar055@gmail.com</p>
-                    </a>
-                    <div class="socialIcons">
-                        <a href="https://www.github.com/utkarshkrr" target="_blank"><i class="fa-brands fa-github" aria-label="GitHub Profile"></i></a>
-                        <a href="https://www.linkedin.com/in/utkarshkrr" target="_blank"><i class="fa-brands fa-linkedin" aria-label="LinkedIn Profile"></i></a>
-                        <a href="https://www.twitter.com/utkarshkrr" target="_blank"><i class="fa-brands fa-x-twitter" aria-label="X/Twitter Profile"></i></a>
-                        <a href="https://www.facebook.com/utkarshkrr" target="_blank"><i class="fa-brands fa-facebook" aria-label="Facebook Profile"></i></a>
-                        <a href="https://www.instagram.com/utkarshkrr" target="_blank"><i class="fa-brands fa-instagram" aria-label="Instagram Profile"></i></a>
+        <!--projects-->
+
+        <div id="projects">
+            <div class="container">
+                <h1 class="subtitle">My Projects</h1>
+                <div class="projectList">
+                    <div class="project">
+                        <img src="images/zomato.png" alt="Zomato Clone Project Screenshot">
+                        <div class="layer">
+                            <h3>Zomato Clone</h3>
+                            <p>A Full Stack Zomato Clone is a food delivery platform
+                                built using the MERN stack (MongoDB, Express.js, React.js,
+                                Node.js), allowing users to browse restaurants, place
+                                orders, and make secure payments. It includes features
+                                like user authentication, order management, and real-time
+                                tracking.
+                            </p>
+                            <!--  <a href=""><i class="fa-solid fa-arrow-up-right-from-square" aria-label="Link"></i></a>  -->
+                        </div>
                     </div>
-                    <a href="images/Resume.pdf" download class="btn">Download Resume</a>
-                </div>
-                <div class="contactRight">
-                    <form name="submit-to-google-sheet">
-                        Say hi or drop your queries anytime! 🙂
-                        <input type="text" name="Name" placeholder="Name" required>
-                        <input type="email" name="Email" placeholder="Email" required>
-                        <textarea name="Message" rows="6" placeholder="Your message" required></textarea>
-                        <button type="submit" class="btn">Submit</button>
-                        <span id="count"></span>
-                    </form>
-                    <span id="msg"></span>
+                    <div class="project">
+                        <img src="images/ElectroMart.jpg" alt="ElectroMart E-commerce Website Screenshot">
+                        <div class="layer">
+                            <h3>E-commerce Website</h3>
+                            <p>ElectroMart is a MERN stack-based e-commerce platform
+                                designed for small electronic retailers. It features
+                                user authentication, product search, shopping cart,
+                                and admin management for inventory and orders. The platform
+                                is responsive, scalable, and easy to use, helping local shops
+                                go online affordably.
+                            </p>
+                            <a href="https://github.com/utkarshkrr/ElectroMart"><i
+                                    class="fa-solid fa-arrow-up-right-from-square" aria-label="Link"></i></a>
+                        </div>
+                    </div>
+                    <div class="project">
+                        <img src="images/BTDMRI.jpg" alt="Brain Tumour Detection MRI Screenshot">
+                        <div class="layer">
+                            <h3>MRI Brain Tumour Detector</h3>
+                            <p>This project uses a CNN-based deep learning model
+                                to detect brain tumors from MRI images with 91%
+                                accuracy. It involves preprocessing techniques like
+                                resizing, normalization, and augmentation. The model
+                                was deployed using Flask for real-time predictions.
+                                Challenges like data imbalance and overfitting were
+                                handled well.
+                            </p>
+                            <a href="https://github.com/utkarshkrr/BrainTumourDetector"><i
+                                    class="fa-solid fa-arrow-up-right-from-square" aria-label="Link"></i></a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="copyright">
-        Copyright © Utkarsh
-        <br>
-        Made with <i class="fa-solid fa-heart" aria-label="Heart Icon"></i> in India.
-    </div>
+
+        <!-------------------contact----------------->
+        <div id="contactMe">
+            <div class="container">
+                <div class="row">
+                    <div class="contactLeft">
+                        <h1 class="subtitle">Contact Me</h1>
+                        Feel free to reach out via email or socials!
+                        <a href="mailto:utkarshkumar055@gmail.com" target="_blank">
+                            <p><i class="fa-solid fa-paper-plane"> </i>utkarshkumar055@gmail.com</p>
+                        </a>
+                        <div class="socialIcons">
+                            <a href="https://www.github.com/utkarshkrr" target="_blank"><i class="fa-brands fa-github"
+                                    aria-label="GitHub Profile"></i></a>
+                            <a href="https://www.linkedin.com/in/utkarshkrr" target="_blank"><i
+                                    class="fa-brands fa-linkedin" aria-label="LinkedIn Profile"></i></a>
+                            <a href="https://www.twitter.com/utkarshkrr" target="_blank"><i
+                                    class="fa-brands fa-x-twitter" aria-label="X/Twitter Profile"></i></a>
+                            <a href="https://www.facebook.com/utkarshkrr" target="_blank"><i
+                                    class="fa-brands fa-facebook" aria-label="Facebook Profile"></i></a>
+                            <a href="https://www.instagram.com/utkarshkrr" target="_blank"><i
+                                    class="fa-brands fa-instagram" aria-label="Instagram Profile"></i></a>
+                        </div>
+                        <a href="images/Resume.pdf" download class="btn">Download Resume</a>
+                    </div>
+                    <div class="contactRight">
+                        <form name="submit-to-google-sheet">
+                            Say hi or drop your queries anytime! 🙂
+                            <input type="text" name="Name" placeholder="Name" required>
+                            <input type="email" name="Email" placeholder="Email" required>
+                            <textarea name="Message" rows="6" placeholder="Your message" required></textarea>
+                            <button type="submit" class="btn">Submit</button>
+                            <span id="count"></span>
+                        </form>
+                        <span id="msg"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            Copyright © Utkarsh
+            <br>
+            Made with <i class="fa-solid fa-heart" aria-label="Heart Icon"></i>
+        </div>
+    </main>
 
     <div id="loaderContainer">
         <img src="images/logo.png" alt="Loading Logo">
