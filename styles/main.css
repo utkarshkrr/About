@@ -176,6 +176,7 @@ form #count{
     .header_text{
         margin-top: 60%;
         font-size: 16px;
+        text-align: right;
     }
     .header_text h1{
         font-size: 30px;
