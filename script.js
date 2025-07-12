@@ -20,68 +20,78 @@ function openTab(tabName) {
     var currentTab = document.getElementById(tabName);
     currentTab.style.display = "block"; // Show the clicked tab
 
-    setTimeout(function() {
+    setTimeout(function () {
         currentTab.classList.add('activeTab'); // Trigger smooth transition
     }, 10);
 }
 
-
 var sideMenu = document.getElementById("sideMenu");
 
 function openMenu() {
-  sideMenu.style.right = "0";
+    sideMenu.style.right = "0";
 }
 function closeMenu() {
-  sideMenu.style.right = "-200px";
+    sideMenu.style.right = "-200px";
 }
-
-let totalcount = 0; // use let (not var twice)
 
 const scriptURL = 'https://script.google.com/macros/s/AKfycbx4_0LBjWRtdgfIu7vGkJoUOi0uyWdpFecYaCGo3lBCWgX4qZYkxZkVlN33TrA5rLE6/exec';
 const form = document.forms['submit-to-google-sheet'];
 const msg = document.getElementById("msg");
-const count = document.getElementById("count"); // fix here (no 'var totalcount' again)
 
 form.addEventListener('submit', e => {
-  e.preventDefault();
+    e.preventDefault();
 
-  const name = form['Name'].value.trim();
-  const email = form['Email'].value.trim();
-  const message = form['Message'].value.trim();
+    const submitButton = form.querySelector("button[type='submit']");
+    submitButton.disabled = true;
+    submitButton.innerText = "Sending...";
 
-  // Validation
-  const nameRegex = /^[a-zA-Z\s]{3,50}$/;
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const name = form['Name'].value.trim();
+    const email = form['Email'].value.trim();
+    const message = form['Message'].value.trim();
 
-  if (!nameRegex.test(name)) {
-    alert("Please enter a valid name (only letters and spaces, 2-50 characters).");
-    return;
-  }
-  if (!emailRegex.test(email)) {
-    alert("Please enter a valid email address.");
-    return;
-  }
-  if (message.length < 10) {
-    alert("Message should be at least 10 characters long.");
-    return;
-  }
+    const nameRegex = /^[a-zA-Z\s]{3,50}$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-  // If all validations pass
-  fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-    .then(response => {
-      msg.innerHTML = "Your message was sent successfully.";
-      setTimeout(function () {
-        msg.innerHTML = "";
-      }, 3000);
-      form.reset();
+    if (!nameRegex.test(name)) {
+        alert("Please enter a valid name (only letters and spaces, 3-50 characters).");
+        resetSubmitButton(submitButton);
+        return;
+    }
 
-      // Increment and update count only after successful submit
-      totalcount++;
-      count.innerHTML = `${totalcount}`;
-    })
-    .catch(error => console.error('Error!', error.message));
+    if (!emailRegex.test(email)) {
+        alert("Please enter a valid email address.");
+        resetSubmitButton(submitButton);
+        return;
+    }
+
+    if (message.length < 3) {
+        alert("Message should be at least 3 characters long.");
+        resetSubmitButton(submitButton);
+        return;
+    }
+
+    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        .then(response => {
+            msg.innerHTML = "Your message was sent successfully.";
+            form.reset();
+            setTimeout(() => {
+                msg.innerHTML = "";
+                resetSubmitButton(submitButton);
+            }, 3000);
+        })
+        .catch(error => {
+            console.error('Error!', error.message);
+            alert("Something went wrong. Please try again.");
+            resetSubmitButton(submitButton);
+        });
 });
 
+function resetSubmitButton(button) {
+    button.disabled = false;
+    button.innerText = "Send";
+}
+
+// Loader fade out on page load
 $(window).on("load", function () {
     $("#loaderContainer").fadeOut("slow");
 });
