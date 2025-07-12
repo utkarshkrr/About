@@ -77,7 +77,7 @@ form.addEventListener('submit', e => {
             setTimeout(() => {
                 msg.innerHTML = "";
                 resetSubmitButton(submitButton);
-            }, 3000);
+            }, 1000);
         })
         .catch(error => {
             console.error('Error!', error.message);
