@@ -23,13 +23,16 @@
 .about_col2 h2{
     margin-top: 10px;
 }
+
+.about_col2 p{
+    text-align: justify;
+}
 .about_col2 ul{
     margin: auto 20px;
 }
 .about_col2 ul li span{
     color: #0b66ab;
     font-size: 20px;
-    text-align: left;
 }
 
 
