@@ -1,9 +1,9 @@
-html{
+html {
     scroll-behavior: smooth;
     scroll-padding-top: 60px;
 }
-  
-*{
+
+* {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
@@ -11,7 +11,7 @@ html{
     transition: all 0.25s;
 }
 
-body{
+body {
     background: #080808;
     color: #F6F0F0;
     overflow-x: hidden;
@@ -19,37 +19,42 @@ body{
 
 
 /*contact section*/
-.contactLeft{
+.contactLeft {
     flex-basis: 35%;
 }
-.contactLeft p{
+
+.contactLeft p {
     margin-top: 20px;
 }
-.contactLeft a{
+
+.contactLeft a {
     color: white;
 }
-.contactLeft p i{
+
+.contactLeft p i {
     color: #1298ff;
     margin-right: 15px;
     font-size: 25px;
 }
 
-.socialIcons{
+.socialIcons {
     margin: 30px 0;
 }
-.socialIcons a{
+
+.socialIcons a {
     text-decoration: none;
     font-size: 30px;
     margin-right: 15px;
     display: inline-block;
     transition: all 0.35s;
 }
-.socialIcons a:hover{
+
+.socialIcons a:hover {
     color: #1298ff;
     transform: translateY(-5px);
 }
 
-.btn{
+.btn {
     display: block;
     margin: 50px 0;
     width: fit-content;
@@ -63,18 +68,21 @@ body{
     cursor: pointer;
     text-align: center;
 }
-.btn:hover{
+
+.btn:hover {
     transform: scale(1.05);
 }
 
-.contactRight{
+.contactRight {
     flex-basis: 60%;
 }
 
-.contactRight form{
+.contactRight form {
     width: 100%;
 }
-form input, form textarea{
+
+form input,
+form textarea {
     width: 100%;
     border: 0;
     outline: none;
@@ -86,26 +94,30 @@ form input, form textarea{
     font-size: 18px;
 }
 
-form .btn{
+form .btn {
     margin: 10px 0;
 }
 
-form #count{
-    color: #0b66ab;
-    font-size: 40px;
-    font-weight: 500;
-    position: absolute;
-    right: 10%;
+#responses {
+    color: white;
+    font-size: 18px;
+    font-weight: 300;
 }
 
-.contactRight #msg{
+#count .number {
+    color: #0b66ab;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.contactRight #msg {
     color: #0b66ab;
     display: block;
     min-height: 24px;
 }
 
 /*copyright*/
-.copyright{
+.copyright {
     width: 100%;
     text-align: center;
     padding: 10px 0;
@@ -113,11 +125,12 @@ form #count{
     font-weight: 300;
     margin: 20px 0;
 }
-.copyright i{
+
+.copyright i {
     color: #1298ff;
 }
 
-#loaderContainer{
+#loaderContainer {
     position: fixed;
     top: 0;
     right: 0;
@@ -130,11 +143,13 @@ form #count{
     align-items: center;
     justify-content: center;
 }
-#loaderContainer img{
+
+#loaderContainer img {
     width: 400px;
     animation: flicker 2s linear infinite;
 }
-#loaderContainer div{
+
+#loaderContainer div {
     position: absolute;
     width: 450px;
     height: 450px;
@@ -144,53 +159,90 @@ form #count{
     animation: spin 1.5s linear infinite;
 }
 
-@keyframes spin{
-    0%{
+@keyframes spin {
+    0% {
         transform: rotate(0deg);
     }
-    100%{
+
+    100% {
         transform: rotate(360deg);
     }
 }
 
 @keyframes flicker {
-    0%{opacity: 1;}
-    10%{opacity: 0.3;}
-    20%{opacity: 1;}
-    30%{opacity: 1;}
-    40%{opacity: 0.3;}
-    50%{opacity: 1;}
-    60%{opacity: 0.3;}
-    70%{opacity: 1;}
-    80%{opacity: 0.3;}
-    90%{opacity: 1;}
-    100%{opacity: 1;}
+    0% {
+        opacity: 1;
+    }
+
+    10% {
+        opacity: 0.3;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    40% {
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    60% {
+        opacity: 0.3;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 0.3;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 /*-----------------responsiveness optimization---------------------*/
 
-@media only screen and (max-width:600px){
-    #header{
+@media only screen and (max-width:600px) {
+    #header {
         background-image: url(../images/mobileHome.png);
     }
-    .header_text{
+
+    .header_text {
         margin-top: 60%;
         font-size: 16px;
         text-align: right;
     }
-    .header_text h1{
+
+    .header_text h1 {
         font-size: 30px;
     }
 
-    nav{
+    nav {
         justify-content: space-between;
         padding: 0 20px;
     }
-    nav .fas{
+
+    nav .fas {
         display: block;
         font-size: 24px;
     }
-    nav ul{
+
+    nav ul {
         background: #1298ff;
         position: fixed;
         top: 0;
@@ -200,72 +252,91 @@ form #count{
         padding: 50px 0;
         z-index: 2;
     }
-    nav ul li{
+
+    nav ul li {
         display: block;
         margin: 24px;
     }
-    nav ul .fas{
+
+    nav ul .fas {
         position: absolute;
         top: 25px;
         left: 25px;
         cursor: pointer;
     }
 
-    .subtitle{
+    .subtitle {
         font-size: 40px
     }
-    .about_col1, .about_col2{
+
+    .about_col1,
+    .about_col2 {
         flex-basis: 100%;
     }
-    .about_col1{
+
+    .about_col1 {
         margin-bottom: 30px;
     }
-    .about_col2{
+
+    .about_col2 {
         font-size: 14px;
     }
-    .tab_titles{
+
+    .tab_titles {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 20px;
     }
-    .tab_links{
+
+    .tab_links {
         font-size: 14px;
         margin: 0;
     }
-    .expertiseList div h2{
+
+    .expertiseList div h2 {
         font-size: 35px;
         flex-basis: 75%;
     }
-    .expertiseList div i{
+
+    .expertiseList div i {
         font-size: 40px;
         flex-basis: 20%;
     }
-    .expertiseList div:hover i{
+
+    .expertiseList div:hover i {
         font-size: 30px;
     }
-    .expertiseList div:hover h2{
+
+    .expertiseList div:hover h2 {
         font-size: 25px;
     }
-    .layer p{
+
+    .layer p {
         font-size: 12px;
     }
-    .contactLeft, .contactRight{
+
+    .contactLeft,
+    .contactRight {
         flex-basis: 100%;
     }
-    .copyright{
+
+    .copyright {
         font-size: 14px;
     }
-    .btn{
+
+    .btn {
         width: 100%;
         margin: 0 0 50px 0;
     }
-    #loaderContainer div{
+
+    #loaderContainer div {
         width: 250px;
         height: 250px;
         border: 10px solid white;
         border-left-color: transparent;
     }
-    #loaderContainer img{
+
+    #loaderContainer img {
         transform: scale(0.5);
     }
 }
