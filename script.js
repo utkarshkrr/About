@@ -99,7 +99,26 @@ form.addEventListener('submit', e => {
 function resetSubmitButton(button) {
     button.disabled = false;
     button.innerText = "Send";
+    updateTotalResponses();
 }
+
+//total responses
+function updateTotalResponses(){
+fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vT-F73pp_2T24hMqYgATPMW0KE68iOYHC15W8FqwM3I_GCFPVhuOnhwwVT9uW4CA5xv0oIXLMfVWPtq/pub?gid=1037094470&single=true&output=csv')
+  .then(response => response.text())
+  .then(csvText => {
+    const rows = csvText.trim().split('\n').map(row => row.split(','));
+    const totalResponses = rows[2][1]; 
+
+    document.getElementById('count').innerHTML = `<span class="number">${totalResponses}</span> messages and counting.`;
+  })
+  .catch(err => {
+    console.error('Error loading CSV:', err);
+    document.getElementById('count').innerHTML = 'Loading...';
+  });
+}
+
+updateTotalResponses();
 
 // Loader fade out on page load
 $(window).on("load", function () {
