@@ -34,6 +34,12 @@
     color: #0b66ab;
     font-size: 20px;
 }
+.certificationLink{
+    color: #0b66ab;
+}
+.certificationLink:hover{
+    color: #1298ff;
+}
 
 
 .subtitle{
