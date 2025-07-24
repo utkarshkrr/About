@@ -1,0 +1,185 @@
+#gameOpenBtn {
+    position: fixed;
+    bottom: 5%;
+    right: 1%;
+    border-radius: 50px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    animation: seeSaw 2s linear infinite;
+}
+
+#gameOpenBtn i {
+    font-size: 50px;
+    color: white;
+    transition: transform 0.3s ease-in-out;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+}
+
+#gameOpenBtn:hover i {
+    transform: scale(1.1);
+}
+
+
+.game-btn {
+    padding: 12px 25px;
+    background: #0b66ab;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 600;
+}
+
+
+#gameModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.game-modal-content {
+    background: #101010;
+    padding: 30px;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 600px;
+    color: #F6F0F0;
+    border: 2px solid #1298ff;
+    text-align: center;
+    margin: auto;
+    overflow: hidden;
+}
+#gameForm h2{
+    color: #1298ff;
+}
+
+.game-singleInput label {
+    display: block;
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #0b66ab;
+}
+
+.game-singleInput input {
+    background: #262626;
+    border: none;
+    padding: 10px 15px;
+    color: white;
+    border-radius: 6px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+.game-error-msg {
+    color: #ff4d4d;
+    font-size: 16px;
+    min-height: 20px;
+    margin-bottom: 5px;
+}
+
+.game-clue-msg {
+    color: #97ccf5;
+    font-size: 14px;
+    min-height: 20px;
+}
+
+.fadeIn {
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slideOut {
+    animation: slideOut 0.2s forwards;
+}
+
+@keyframes slideOut {
+    to {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+}
+
+.slideIn {
+    animation: slideIn 0.2s forwards;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+#gameAnswerText {
+    font-size: 20px;
+    color: #F6F0F0;
+    font-weight: 600;
+    margin: 20px 0;
+    opacity: 0;
+}
+
+#gameVideo {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 12px;
+    opacity: 0;
+    margin-top: 20px;
+}
+
+.zoomIn {
+    animation: zoomIn 0.5s forwards;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes seeSaw {
+  0%   { transform: rotate(0deg); }
+  10%  { transform: rotate(20deg); }
+  20%  { transform: rotate(-20deg); }
+  30%  { transform: rotate(15deg); }
+  40%  { transform: rotate(-15deg); }
+  50%  { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); } /* Rest Phase */
+}
