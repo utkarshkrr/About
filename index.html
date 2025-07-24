@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="styles/about&Skills.css">
     <link rel="stylesheet" href="styles/expertise&project.css">
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/game.css">
     <script src="https://kit.fontawesome.com/63b42dee74.js" crossorigin="anonymous"></script>
 </head>
 
@@ -81,10 +82,14 @@
                         </ul><h2>Certifications</h2>
                         <ul>
                             <li>
-                                <span>AWS Cloud Foundations & AWS Cloud Architecture</span><br>December 2024 | AWS Canvas - AICTE
+                                <span>
+                                    <a class="certificationLink" target="_blank" href="https://www.credly.com/badges/2a37a59f-5474-4d9b-9f1a-49c08748ac32/">AWS Cloud Foundations</a>
+                                    & 
+                                    <a class="certificationLink" target="_blank" href="https://www.credly.com/badges/a5fa01be-e60c-4ba0-807f-6d7fb3b7eedd/">AWS Cloud Architecture</a>
+                                </span><br>December 2024 | AWS Canvas - AICTE
                             </li>
                             <li>
-                                <span>IBM Data Science Professional Certificate (V3)</span><br>July 2025 | Coursera - IBM
+                                <span><a class="certificationLink" target="_blank" href="https://www.credly.com/badges/9d1f349e-93a9-4e1f-978b-aa0cdfc24741/">IBM Data Science Professional Certificate (V3)</a></span><br>July 2025 | Coursera - IBM
                             </li>
                         </ul>
                     </div>
@@ -317,6 +322,35 @@
             <br>
             Made with <i class="fa-solid fa-heart" aria-label="Heart Icon"></i>
         </div>
+
+        <button id="gameOpenBtn"><i class="fa-solid fa-gamepad"></i></button>
+        
+        <!-- Game Modal -->
+        <div class="game-modal" id="gameModal">
+            <div class="game-modal-content">
+            <form id="gameForm" onsubmit="return false;">
+                <img src="images/logo.png" class="logo" id="nav_logo" alt="Utkarsh Logo"
+                    onclick="window.location.href='https://utkarshkrr.github.io/About/';">
+                <h2>Antonym Challenge</h2>
+                <p id="gameInstruction">Do you know the opposite of these words?</p>
+                <div class="game-singleInput">
+                    <br>
+                <label id="gameInputLabel">Always</label>
+                <input type="text" id="gameInputField" placeholder="Your answer" required autocomplete="off" />
+                <div id="gameError" class="game-error-msg"></div>
+                <div id="gameClue" class="game-clue-msg"></div>
+                <button type="button" id="gameNextBtn" class="game-btn">Next</button>
+                </div>
+                <div id="gameResult">
+                <p id="gameAnswerText" class="hidden"></p>
+                <video id="gameVideo" class="hidden" loop controls>
+                    <source src="images/surprise.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                </div>
+            </form>
+            </div>
+        </div>
     </main>
 
     <div id="loaderContainer">
@@ -324,6 +358,7 @@
         <div></div>
     </div>
     <script type="text/JavaScript" src="script.js"></script>
+    <script type="text/JavaScript" src="gameScript.js"></script>
 </body>
 
 </html>
