@@ -103,19 +103,19 @@ function resetSubmitButton(button) {
 }
 
 //total responses
-function updateTotalResponses(){
-fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vT-F73pp_2T24hMqYgATPMW0KE68iOYHC15W8FqwM3I_GCFPVhuOnhwwVT9uW4CA5xv0oIXLMfVWPtq/pub?gid=1037094470&single=true&output=csv')
-  .then(response => response.text())
-  .then(csvText => {
-    const rows = csvText.trim().split('\n').map(row => row.split(','));
-    const totalResponses = rows[2][1]; 
+function updateTotalResponses() {
+    fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vT-F73pp_2T24hMqYgATPMW0KE68iOYHC15W8FqwM3I_GCFPVhuOnhwwVT9uW4CA5xv0oIXLMfVWPtq/pub?gid=1037094470&single=true&output=csv')
+        .then(response => response.text())
+        .then(csvText => {
+            const rows = csvText.trim().split('\n').map(row => row.split(','));
+            const totalResponses = rows[2][1];
 
-    document.getElementById('count').innerHTML = `<span class="number">${totalResponses}</span> messages and counting.`;
-  })
-  .catch(err => {
-    console.error('Error loading CSV:', err);
-    document.getElementById('count').innerHTML = 'Loading...';
-  });
+            document.getElementById('count').innerHTML = `<span class="number">${totalResponses}</span> messages and counting.`;
+        })
+        .catch(err => {
+            console.error('Error loading CSV:', err);
+            document.getElementById('count').innerHTML = 'Loading...';
+        });
 }
 
 updateTotalResponses();
@@ -124,3 +124,25 @@ updateTotalResponses();
 $(window).on("load", function () {
     $("#loaderContainer").fadeOut("slow");
 });
+
+
+
+console.log("%cHold up, you really check console logs huh? 🤨😂", "color: #1298ff; font-size: 16px; font-weight: bold;");
+setTimeout(() => {
+    console.log("Loading secret data...");
+}, 500);
+setTimeout(() => {
+    console.log("%c[###@4$%*GARBLED DATA*%$#@!###]", "color: #0b66ab;");
+}, 1500);
+setTimeout(() => {
+    console.log("%cFetching XOR matrices... 10101010101", "color: #ff69b4;");
+}, 2000);
+setTimeout(() => {
+    console.log("%cDecrypting hex payload... cafebabe1234deadbeef", "color: #f39c12;");
+}, 2500);
+setTimeout(() => {
+    console.log("Just kidding, there's nothing here 😁");
+}, 3000);
+setTimeout(() => {
+    console.log("But since you're here... https://www.youtube.com/watch?v=dQw4w9WgXcQ 🎶");
+}, 3500);
