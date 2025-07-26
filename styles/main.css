@@ -283,14 +283,32 @@ form .btn {
     }
 
     .tab_titles {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 20px;
+        display: flex;
+        overflow-x: auto;
+        white-space: nowrap;
+        gap: 10px;
+        padding-bottom: 10px;
+        scrollbar-width: none;
+    }
+
+    .tab_titles::-webkit-scrollbar {
+        display: none;
     }
 
     .tab_links {
-        font-size: 14px;
-        margin: 0;
+        flex: 0 0 auto;
+        font-size: 16px;
+        padding: 5px 10px;
+        background-color: #1e1e1e;
+        border-radius: 6px;
+        text-align: center;
+        cursor: pointer;
+        user-select: none;
+        margin-right: 25px;
+    }
+
+    .tab_links:last-child {
+        margin-right: 0;
     }
 
     .expertiseList div h2 {
