@@ -22,6 +22,7 @@ nav{
     right: 0;
     background-color: #000000;
     z-index: 100;
+    filter: drop-shadow(0 0 10px #1298ff46);
 }
 
 #nav_logo{
