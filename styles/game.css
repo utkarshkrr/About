@@ -162,6 +162,12 @@
     animation: zoomIn 0.5s forwards;
 }
 
+@media (max-width: 600px) {
+    .game-modal-content{
+        margin-top: 10vh;
+    }
+}
+
 @keyframes zoomIn {
     from {
         transform: scale(0.8);
