@@ -49,7 +49,7 @@ export default function Experience() {
             </div>
 
             <p className="font-mono-heading text-xs text-signal-dim shrink-0">
-              May 2026 · Joining soon
+              Joining soon
             </p>
           </div>
 
