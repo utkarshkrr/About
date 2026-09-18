@@ -10,17 +10,28 @@ const LINKS = [
 ]
 
 const SOCIALS = [
-  { address: 'https://github.com/utkarshkrr', label: 'github' },
-  { address: 'https://www.linkedin.com/in/utkarshkrr', label: 'linkedin' },
+  {
+    address: 'https://github.com/utkarshkrr',
+    label: 'github',
+  },
+  {
+    address: 'https://www.linkedin.com/in/utkarshkrr',
+    label: 'linkedin',
+  },
 ]
 
 const BINARY = '01010101 01001011'
 
-export default function Sidebar({ menuOpen, setMenuOpen }) {
-  const [binaryGlitch, setBinaryGlitch] = useState(false)
+export default function Sidebar({
+  menuOpen,
+  setMenuOpen,
+}) {
+  const [binaryGlitch, setBinaryGlitch] =
+    useState(false)
 
   const scrollToSection = (sectionId) => {
-    const section = document.getElementById(sectionId)
+    const section =
+      document.getElementById(sectionId)
 
     if (section) {
       section.scrollIntoView({
@@ -35,7 +46,11 @@ export default function Sidebar({ menuOpen, setMenuOpen }) {
   const visitSocial = (address) => {
     if (!address) return
 
-    window.open(address, '_blank', 'noopener,noreferrer')
+    window.open(
+      address,
+      '_blank',
+      'noopener,noreferrer'
+    )
   }
 
   const handleLogoClick = (e) => {
@@ -69,11 +84,17 @@ export default function Sidebar({ menuOpen, setMenuOpen }) {
       aria-label="Go to top"
     >
       {binaryGlitch ? (
-        <span className="text-signal">{BINARY}</span>
+        <span className="text-signal">
+          {BINARY}
+        </span>
       ) : (
         <>
-          <span className="text-paper">utkarsh</span>
-          <span className="text-signal">krr</span>
+          <span className="text-paper">
+            utkarsh
+          </span>
+          <span className="text-signal">
+            krr
+          </span>
         </>
       )}
     </button>
@@ -86,36 +107,81 @@ export default function Sidebar({ menuOpen, setMenuOpen }) {
       ========================== */}
       <div
         id="mobile-top-bar"
-        className="flex items-center justify-between px-6 py-4 lg:hidden border-b border-line"
+        className="
+          flex
+          items-center
+          justify-between
+          px-6
+          py-4
+          lg:hidden
+          border-b
+          border-line
+        "
       >
         <Logo mobile />
 
-        <div className="flex items-center gap-3">
-          <ThemeToggle />
-
-          <button
-            type="button"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-            className="relative w-[58px] h-[30px] text-paper text-xs font-sans border border-line rounded-full overflow-hidden cursor-pointer"
+        <button
+          type="button"
+          onClick={() =>
+            setMenuOpen(!menuOpen)
+          }
+          aria-label={
+            menuOpen
+              ? 'Close menu'
+              : 'Open menu'
+          }
+          className="
+            relative
+            w-[58px]
+            h-[30px]
+            text-paper
+            text-xs
+            font-sans
+            border
+            border-line
+            rounded-full
+            overflow-hidden
+            cursor-pointer
+          "
+        >
+          <span
+            className={`
+              absolute
+              inset-0
+              flex
+              items-center
+              justify-center
+              transition-all
+              duration-300
+              ${
+                menuOpen
+                  ? 'opacity-0 -translate-y-2'
+                  : 'opacity-100 translate-y-0'
+              }
+            `}
           >
-            <span
-              className={`absolute inset-0 flex items-center justify-center transition-all duration-300 ${
-                menuOpen ? 'opacity-0 -translate-y-2' : 'opacity-100 translate-y-0'
-              }`}
-            >
-              menu
-            </span>
+            menu
+          </span>
 
-            <span
-              className={`absolute inset-0 flex items-center justify-center transition-all duration-300 ${
-                menuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
-              }`}
-            >
-              close
-            </span>
-          </button>
-        </div>
+          <span
+            className={`
+              absolute
+              inset-0
+              flex
+              items-center
+              justify-center
+              transition-all
+              duration-300
+              ${
+                menuOpen
+                  ? 'opacity-100 translate-y-0'
+                  : 'opacity-0 translate-y-2'
+              }
+            `}
+          >
+            close
+          </span>
+        </button>
       </div>
 
       {/* =========================
@@ -123,8 +189,15 @@ export default function Sidebar({ menuOpen, setMenuOpen }) {
       ========================== */}
       {menuOpen && (
         <div
-          onClick={() => setMenuOpen(false)}
-          className="lg:hidden fixed inset-0 z-40"
+          onClick={() =>
+            setMenuOpen(false)
+          }
+          className="
+            lg:hidden
+            fixed
+            inset-0
+            z-40
+          "
         />
       )}
 
@@ -132,34 +205,96 @@ export default function Sidebar({ menuOpen, setMenuOpen }) {
           MOBILE SIDE DRAWER
       ========================== */}
       <nav
-        className={`lg:hidden fixed top-16 right-0 z-50 h-[calc(100vh-4rem)] w-72 border-l border-line px-10 py-10 transform transition-transform duration-300 ease-in-out ${
-          menuOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}
+        className={`
+          lg:hidden
+          fixed
+          top-16
+          right-0
+          z-50
+          h-[calc(100vh-4rem)]
+          w-72
+          border-l
+          border-line
+          px-10
+          py-10
+          transform
+          transition-transform
+          duration-300
+          ease-in-out
+          ${
+            menuOpen
+              ? 'translate-x-0'
+              : 'translate-x-full'
+          }
+        `}
       >
+        {/* Navigation */}
         <div className="flex flex-col gap-6">
           {LINKS.map((l) => (
             <button
               key={l.id}
               type="button"
-              onClick={() => scrollToSection(l.id)}
-              className="font-serif italic text-lg text-paper/80 hover:text-signal transition-colors w-fit cursor-pointer text-left"
+              onClick={() =>
+                scrollToSection(l.id)
+              }
+              className="
+                font-serif
+                italic
+                text-lg
+                text-paper/80
+                hover:text-signal
+                transition-colors
+                w-fit
+                cursor-pointer
+                text-left
+              "
             >
               {l.label}
             </button>
           ))}
         </div>
 
-        <div className="absolute bottom-8 left-10 flex flex-col gap-3">
-          {SOCIALS.map((s) => (
-            <button
-              key={s.address}
-              type="button"
-              onClick={() => visitSocial(s.address)}
-              className="font-sans text-xs text-muted hover:text-signal transition-colors w-fit cursor-pointer text-left"
-            >
-              {s.label}
-            </button>
-          ))}
+        {/* =========================
+            MOBILE BOTTOM AREA
+        ========================== */}
+        <div
+          className="
+            absolute
+            bottom-8
+            left-10
+            right-10
+            flex
+            flex-col
+            gap-6
+          "
+        >
+          {/* Theme Toggle */}
+          <ThemeToggle />
+
+          {/* Social Links */}
+          <div className="flex flex-col gap-3">
+            {SOCIALS.map((s) => (
+              <button
+                key={s.address}
+                type="button"
+                onClick={() =>
+                  visitSocial(s.address)
+                }
+                className="
+                  font-sans
+                  text-xs
+                  text-muted
+                  hover:text-signal
+                  transition-colors
+                  w-fit
+                  cursor-pointer
+                  text-left
+                "
+              >
+                {s.label}
+              </button>
+            ))}
+          </div>
         </div>
       </nav>
 
@@ -168,7 +303,8 @@ export default function Sidebar({ menuOpen, setMenuOpen }) {
       ========================== */}
       <aside
         className="
-          hidden lg:flex
+          hidden
+          lg:flex
           lg:flex-col
           lg:justify-between
           lg:fixed
@@ -177,7 +313,8 @@ export default function Sidebar({ menuOpen, setMenuOpen }) {
           lg:w-64
           lg:px-10
           lg:py-14
-          border-r border-line
+          border-r
+          border-line
           z-50
         "
       >
@@ -189,8 +326,19 @@ export default function Sidebar({ menuOpen, setMenuOpen }) {
               <button
                 key={l.id}
                 type="button"
-                onClick={() => scrollToSection(l.id)}
-                className="font-sans text-sm text-muted hover:text-paper transition-colors w-fit cursor-pointer text-left"
+                onClick={() =>
+                  scrollToSection(l.id)
+                }
+                className="
+                  font-sans
+                  text-sm
+                  text-muted
+                  hover:text-paper
+                  transition-colors
+                  w-fit
+                  cursor-pointer
+                  text-left
+                "
               >
                 {l.label}
               </button>
@@ -198,21 +346,36 @@ export default function Sidebar({ menuOpen, setMenuOpen }) {
           </nav>
         </div>
 
-        {/* Desktop Social Links + Theme Toggle */}
+        {/* =========================
+            DESKTOP BOTTOM
+        ========================== */}
         <div className="flex flex-col gap-5">
+          {/* Social Links */}
           <div className="flex flex-col gap-3">
             {SOCIALS.map((s) => (
               <button
                 key={s.address}
                 type="button"
-                onClick={() => visitSocial(s.address)}
-                className="font-sans text-xs text-muted hover:text-signal transition-colors w-fit cursor-pointer text-left"
+                onClick={() =>
+                  visitSocial(s.address)
+                }
+                className="
+                  font-sans
+                  text-xs
+                  text-muted
+                  hover:text-signal
+                  transition-colors
+                  w-fit
+                  cursor-pointer
+                  text-left
+                "
               >
                 {s.label}
               </button>
             ))}
           </div>
 
+          {/* Theme Toggle */}
           <ThemeToggle />
         </div>
       </aside>

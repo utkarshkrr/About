@@ -5,7 +5,7 @@
 /* =========================================================
    THEME TOKENS
 
-   Dark mode: a true dark grey (not black), soft beige in
+   Dark mode: dark grey (not black), soft beige in
    light mode, sage as the single accent throughout.
    Values are "R G B" so Tailwind's rgb(var(--x) / <alpha>)
    opacity syntax keeps working everywhere.

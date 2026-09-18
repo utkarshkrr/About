@@ -4,45 +4,102 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>utkarshkrr</title>
+
   <meta name="description"
     content="Portfolio of Utkarsh Kumar, software engineer working across machine learning and full-stack web development." />
 
   <meta property="og:title" content="utkarshkrr" />
+
   <meta property="og:description"
     content="Portfolio of Utkarsh Kumar, software engineer working across machine learning and full-stack web development." />
+
   <meta property="og:type" content="website" />
 
   <meta name="theme-color" content="#13120f" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
   <link
     href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap"
     rel="stylesheet" />
+
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 
   <script>
     (function () {
       try {
         var stored = localStorage.getItem('theme');
-        var theme = stored === 'light' ? 'light' : 'dark';
-        document.documentElement.setAttribute('data-theme', theme);
+        var now = new Date();
+        var hour = now.getHours();
+
+        /*
+         * Manual themes remain active until the next
+         * 06:00 / 18:00 boundary.
+         */
+
+        if (stored === 'light' || stored === 'dark') {
+          var boundary = new Date(now);
+
+          if (stored === 'light') {
+            boundary.setHours(18, 0, 0, 0);
+          } else {
+            if (hour >= 18) {
+              boundary.setDate(boundary.getDate() + 1);
+            }
+
+            boundary.setHours(6, 0, 0, 0);
+          }
+
+          if (now < boundary) {
+            document.documentElement.setAttribute(
+              'data-theme',
+              stored
+            );
+
+            return;
+          }
+
+          localStorage.removeItem('theme');
+        }
+
+        /*
+         * No active manual theme:
+         * follow the clock.
+         */
+        var automaticTheme =
+          hour >= 6 && hour < 18
+            ? 'light'
+            : 'dark';
+
+        document.documentElement.setAttribute(
+          'data-theme',
+          automaticTheme
+        );
       } catch (e) {
-        document.documentElement.setAttribute('data-theme', 'dark');
+        document.documentElement.setAttribute(
+          'data-theme',
+          'dark'
+        );
       }
     })();
   </script>
 </head>
 
 <body class="bg-ink text-paper">
+
   <!--
     if you're reading this,
     you're probably the kind of person
     I'd enjoy working with.
   -->
+
   <div id="root"></div>
+
   <script type="module" src="/src/main.jsx"></script>
+
 </body>
 
 </html>
