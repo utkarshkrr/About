@@ -2,17 +2,17 @@ export default function NotFound() {
   return (
     <main className="min-h-screen flex items-center justify-center px-6">
       <div className="w-full max-w-4xl">
-        <div className="font-mono-heading">
+        <div>
 
-          <p className="text-signal text-sm mb-6">
+          <p className="font-sans text-signal text-sm mb-6">
             error 404
           </p>
 
-          <h1 className="text-4xl sm:text-5xl text-paper mb-5">
+          <h1 className="font-serif text-5xl sm:text-6xl text-paper mb-5">
             page not found<span className="text-signal">.</span>
           </h1>
 
-          <p className="text-muted leading-relaxed max-w-lg mb-8">
+          <p className="font-sans text-muted leading-relaxed max-w-lg mb-8">
             this page doesn't exist.
             <br />
             but you found something that wasn't supposed to be here.
@@ -26,12 +26,13 @@ export default function NotFound() {
               gap-2
               border
               border-line
-              rounded
+              rounded-full
               px-5
               py-2.5
+              font-sans
               text-sm
               text-paper
-              hover:border-signal
+              hover:border-signal-dim
               hover:text-signal
               transition-colors
             "

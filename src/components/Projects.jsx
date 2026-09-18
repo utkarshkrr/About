@@ -1,8 +1,10 @@
 function SectionLabel({ children }) {
   return (
-    <div className="flex items-center gap-3 mb-8">
-      <span className="h-2 w-2 rounded-full bg-signal" />
-      <p className="font-mono-heading text-base text-muted">{children}</p>
+    <div className="flex items-center gap-4 mb-10">
+      <span className="font-serif italic text-xl text-signal shrink-0">
+        {children}
+      </span>
+      <span className="h-px flex-1 bg-line" />
     </div>
   )
 }
@@ -59,24 +61,24 @@ export default function Projects() {
               key={p.name}
               className={
                 isFeatured
-                  ? 'relative border border-signal/30 rounded-lg px-6 pt-10 pb-6 hover:border-signal'
-                  : 'border border-line rounded-lg p-6 hover:border-muted transition-colors'
+                  ? 'relative border border-signal-dim/50 rounded-2xl px-6 pt-10 pb-6 bg-surface/40 hover:border-signal transition-colors'
+                  : 'border border-line rounded-2xl p-6 hover:border-muted transition-colors'
               }
             >
               {/* Featured tag */}
               {isFeatured && (
-                <span className="absolute top-0 left-6 inline-flex items-center bg-signal/80 text-black px-3 py-1 rounded-b font-mono-heading text-xs">
+                <span className="absolute top-0 left-6 -translate-y-1/2 inline-flex items-center bg-signal text-signal-ink px-3 py-1 rounded-full font-sans text-xs font-medium">
                   featured
                 </span>
               )}
 
               {/* Project name + date */}
               <div className="flex items-center justify-between gap-4 mb-3">
-                <h3 className="font-mono-heading text-lg text-paper min-w-0">
+                <h3 className="font-serif text-xl text-paper min-w-0">
                   {p.name}
                 </h3>
 
-                <p className="font-mono-heading text-xs text-muted shrink-0">
+                <p className="font-sans text-xs text-muted shrink-0">
                   {p.period}
                 </p>
               </div>
@@ -88,7 +90,7 @@ export default function Projects() {
 
               {/* Featured highlight */}
               {isFeatured && p.highlight && (
-                <p className="text-sm  mb-4">
+                <p className="text-sm text-signal mb-4">
                   {p.highlight}
                 </p>
               )}
@@ -99,7 +101,7 @@ export default function Projects() {
                   {p.stack.map((s) => (
                     <li
                       key={s}
-                      className="font-mono-heading text-xs text-signal-dim border border-line rounded px-2 py-1"
+                      className="font-sans text-xs text-signal-dim border border-line rounded-full px-2.5 py-1"
                     >
                       {s}
                     </li>
@@ -109,7 +111,7 @@ export default function Projects() {
                 <button
                   type="button"
                   onClick={() => visitRepository(p.address)}
-                  className="inline-flex items-center rounded border border-line px-4 py-2 font-mono-heading text-sm text-muted hover:border-signal-dim hover:text-signal-dim transition-colors shrink-0 cursor-pointer"
+                  className="inline-flex items-center rounded-full border border-line px-4 py-2 font-sans text-sm text-muted hover:border-signal-dim hover:text-signal transition-colors shrink-0 cursor-pointer"
                 >
                   → visit repo
                 </button>

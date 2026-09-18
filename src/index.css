@@ -2,8 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
-  transition: all 0.25s ease-in-out;
+/* =========================================================
+   THEME TOKENS
+
+   Dark mode: a true dark grey (not black), soft beige in
+   light mode, sage as the single accent throughout.
+   Values are "R G B" so Tailwind's rgb(var(--x) / <alpha>)
+   opacity syntax keeps working everywhere.
+========================================================= */
+
+:root,
+:root[data-theme='dark'] {
+  --color-bg: 30 30 29;
+  --color-surface: 40 40 38;
+  --color-surface-2: 49 48 45;
+  --color-border: 64 63 59;
+  --color-text: 232 230 225;
+  --color-muted: 160 156 148;
+  --color-accent: 150 173 134;
+  --color-accent-dim: 124 144 110;
+  --color-accent-contrast: 30 30 29;
+}
+
+:root[data-theme='light'] {
+  --color-bg: 238 233 221;
+  --color-surface: 230 223 207;
+  --color-surface-2: 222 214 195;
+  --color-border: 205 195 173;
+  --color-text: 33 29 24;
+  --color-muted: 111 101 86;
+  --color-accent: 86 108 74;
+  --color-accent-dim: 109 128 94;
+  --color-accent-contrast: 238 233 221;
+}
+
+* {
+  transition: background-color 0.35s ease, border-color 0.35s ease, color 0.2s ease;
 }
 
 html {
@@ -12,14 +46,18 @@ html {
 
 body {
   font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
-  background-color: #0B0C0E;
-  background-image: radial-gradient(circle, #1B1C1F 1px, transparent 1px);
-  background-size: 28px 28px;
+  background-color: rgb(var(--color-bg));
+  background-image: radial-gradient(
+    ellipse 900px 500px at 50% -10%,
+    rgb(var(--color-accent) / 0.07),
+    transparent 60%
+  );
+  background-repeat: no-repeat;
 }
 
 @media (max-width: 1023px) {
   body {
-    margin-top: 32px;
+    margin-top: 56px;
   }
 
   #mobile-top-bar {
@@ -29,24 +67,21 @@ body {
     right: 0;
     width: 100%;
     z-index: 100;
-    background-color: #0b0c0ead;
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    background-color: rgb(var(--color-bg) / 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
 
   nav {
-    margin-top: 6px;
-    background-color: #0b0c0ead;
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    background-image: radial-gradient(circle, #1B1C1F 1px, transparent 1px);
-    background-size: 28px 28px;
+    background-color: rgb(var(--color-bg) / 0.97);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
   }
 }
 
 ::selection {
-  background: #F2A93B;
-  color: #0B0C0E;
+  background: rgb(var(--color-accent) / 0.35);
+  color: rgb(var(--color-text));
 }
 
 .font-mono-heading {
@@ -59,7 +94,7 @@ body {
   }
 
   50% {
-    opacity: 0.2;
+    opacity: 0.25;
   }
 
   55%, 100% {
@@ -68,5 +103,12 @@ body {
 }
 
 .animate-blink {
-  animation: blink 1.2s ease-in-out infinite;
+  animation: blink 1.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
 }

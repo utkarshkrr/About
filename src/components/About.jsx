@@ -1,10 +1,10 @@
 function SectionLabel({ children }) {
   return (
-    <div className="flex items-center gap-3 mb-8">
-      <span className="h-2 w-2 rounded-full bg-signal" />
-      <p className="font-mono-heading text-base text-muted">
+    <div className="flex items-center gap-4 mb-10">
+      <span className="font-serif italic text-xl text-signal shrink-0">
         {children}
-      </p>
+      </span>
+      <span className="h-px flex-1 bg-line" />
     </div>
   )
 }
@@ -60,7 +60,7 @@ export default function About() {
 
       <div className="grid sm:grid-cols-2 gap-12">
         <div>
-          <h3 className="font-mono-heading text-xs text-muted mb-5">
+          <h3 className="font-sans text-xs text-muted mb-5">
             education
           </h3>
 
@@ -79,11 +79,11 @@ export default function About() {
                 </p>
 
                 <div className="flex items-center gap-3 mt-1">
-                  <p className="font-mono-heading text-xs text-signal-dim">
+                  <p className="font-sans text-xs text-signal-dim">
                     {e.period}
                   </p>
 
-                  <p className="font-mono-heading text-xs text-muted">
+                  <p className="font-sans text-xs text-muted">
                     {e.detail}
                   </p>
                 </div>
@@ -94,14 +94,14 @@ export default function About() {
           <button
             type="button"
             onClick={viewResume}
-            className="inline-flex items-center rounded border border-line px-5 py-2.5 mt-6 font-mono-heading text-sm text-muted hover:border-signal hover:text-signal transition-colors cursor-pointer"
+            className="inline-flex items-center rounded-full border border-line px-5 py-2.5 mt-6 font-sans text-sm text-muted hover:border-signal-dim hover:text-signal transition-colors cursor-pointer"
           >
             → view resume
           </button>
         </div>
 
         <div>
-          <h3 className="font-mono-heading text-xs text-muted mb-5">
+          <h3 className="font-sans text-xs text-muted mb-5">
             certifications
           </h3>
 
@@ -115,14 +115,14 @@ export default function About() {
                   {c.name}
                 </p>
 
-                <p className="font-mono-heading text-xs text-signal-dim mt-1">
+                <p className="font-sans text-xs text-signal-dim mt-1">
                   {c.period}
                 </p>
               </li>
             ))}
           </ul>
 
-          <h3 className="font-mono-heading text-xs text-muted mb-5 mt-10">
+          <h3 className="font-sans text-xs text-muted mb-5 mt-10">
             languages
           </h3>
 

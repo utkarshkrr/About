@@ -44,24 +44,15 @@ export default function LoadingScreen() {
 
     return (
         <div
+            className="fixed inset-0 flex items-center justify-center"
             style={{
-                position: 'fixed',
-                top: 0,
-                left: 0,
                 width: '99vw',
                 height: '100vh',
                 zIndex: 999999,
 
-
-                backgroundColor: '#0b0c0ead',
+                backgroundColor: 'rgb(var(--color-bg) / 0.94)',
                 backdropFilter: 'blur(15px)',
-                backgroundImage:
-                    'radial-gradient(circle, #1B1C1F 1px, transparent 1px)',
-                backgroundSize: '28px 28px',
-
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
+                WebkitBackdropFilter: 'blur(15px)',
 
                 // Fade out
                 opacity: fadeOut ? 0 : 1,
@@ -70,16 +61,16 @@ export default function LoadingScreen() {
         >
             <div
                 style={{
-                    fontFamily: 'monospace',
+                    fontFamily: '"JetBrains Mono", ui-sans-serif, system-ui, sans-serif',
                     fontSize: '28px',
                     letterSpacing: '-0.5px',
                 }}
             >
-                <span style={{ color: '#F5F5F5' }}>
+                <span style={{ color: 'rgb(var(--color-text))' }}>
                     utkarsh
                 </span>
 
-                <span style={{ color: '#F2A93B' }}>
+                <span style={{ color: 'rgb(var(--color-accent))' }}>
                     {text}
                 </span>
 
@@ -88,17 +79,17 @@ export default function LoadingScreen() {
                         display: 'inline-block',
                         width: '2px',
                         height: '28px',
-                        background: '#F2A93B',
+                        background: 'rgb(var(--color-accent))',
                         marginLeft: '5px',
                         verticalAlign: 'middle',
-                        animation: 'blink 0.8s infinite',
+                        animation: 'loader-blink 0.8s infinite',
                     }}
                 />
             </div>
 
             <style>
                 {`
-                    @keyframes blink {
+                    @keyframes loader-blink {
                         0%, 50% {
                             opacity: 1;
                         }

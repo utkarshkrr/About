@@ -352,11 +352,11 @@ export default function Terminal({ onClose, version }) {
 
                 overflow-hidden
 
-                rounded-lg
+                rounded-2xl
                 border
                 border-line
 
-                bg-[#0B0C0E]
+                bg-ink
 
                 shadow-[0_20px_60px_rgba(0,0,0,0.45)]
             "
@@ -581,7 +581,7 @@ export default function Terminal({ onClose, version }) {
                                 </span>
 
                                 <span className="text-muted">
-                                    #F2A93B
+                                    #96AD86
                                 </span>
 
                                 <span className="text-signal">

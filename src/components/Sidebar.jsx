@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import ThemeToggle from './ThemeToggle'
 
 const LINKS = [
   { id: 'about', label: 'about' },
@@ -62,15 +63,13 @@ export default function Sidebar({ menuOpen, setMenuOpen }) {
       onClick={handleLogoClick}
       className={
         mobile
-          ? 'font-mono-heading text-sm text-paper cursor-pointer'
-          : 'font-mono-heading text-base text-paper block mb-14 cursor-pointer'
+          ? 'font-mono-heading text-sm tracking-wide2 text-paper cursor-pointer'
+          : 'font-mono-heading text-sm tracking-wide2 text-paper block mb-16 cursor-pointer'
       }
       aria-label="Go to top"
     >
       {binaryGlitch ? (
-        <span className="text-signal">
-          {BINARY}
-        </span>
+        <span className="text-signal">{BINARY}</span>
       ) : (
         <>
           <span className="text-paper">utkarsh</span>
@@ -87,36 +86,36 @@ export default function Sidebar({ menuOpen, setMenuOpen }) {
       ========================== */}
       <div
         id="mobile-top-bar"
-        className="flex items-center justify-between px-6 py-5 lg:hidden border-b border-line"
+        className="flex items-center justify-between px-6 py-4 lg:hidden border-b border-line"
       >
         <Logo mobile />
 
-        <button
-          type="button"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-          className="relative w-[60px] h-[30px] text-paper text-sm font-mono-heading border border-line rounded overflow-hidden cursor-pointer"
-        >
-          <span
-            className={`absolute inset-0 flex items-center justify-center transition-all duration-300 ${
-              menuOpen
-                ? 'opacity-0 -translate-y-2'
-                : 'opacity-100 translate-y-0'
-            }`}
-          >
-            menu
-          </span>
+        <div className="flex items-center gap-3">
+          <ThemeToggle />
 
-          <span
-            className={`absolute inset-0 flex items-center justify-center transition-all duration-300 ${
-              menuOpen
-                ? 'opacity-100 translate-y-0'
-                : 'opacity-0 translate-y-2'
-            }`}
+          <button
+            type="button"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            className="relative w-[58px] h-[30px] text-paper text-xs font-sans border border-line rounded-full overflow-hidden cursor-pointer"
           >
-            close
-          </span>
-        </button>
+            <span
+              className={`absolute inset-0 flex items-center justify-center transition-all duration-300 ${
+                menuOpen ? 'opacity-0 -translate-y-2' : 'opacity-100 translate-y-0'
+              }`}
+            >
+              menu
+            </span>
+
+            <span
+              className={`absolute inset-0 flex items-center justify-center transition-all duration-300 ${
+                menuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'
+              }`}
+            >
+              close
+            </span>
+          </button>
+        </div>
       </div>
 
       {/* =========================
@@ -134,31 +133,29 @@ export default function Sidebar({ menuOpen, setMenuOpen }) {
       ========================== */}
       <nav
         className={`lg:hidden fixed top-16 right-0 z-50 h-[calc(100vh-4rem)] w-72 border-l border-line px-10 py-10 transform transition-transform duration-300 ease-in-out ${
-          menuOpen
-            ? 'translate-x-0'
-            : 'translate-x-full'
+          menuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-6">
           {LINKS.map((l) => (
             <button
               key={l.id}
               type="button"
               onClick={() => scrollToSection(l.id)}
-              className="font-mono-heading text-sm hover:text-paper transition-colors w-fit cursor-pointer text-left"
+              className="font-serif italic text-lg text-paper/80 hover:text-signal transition-colors w-fit cursor-pointer text-left"
             >
               {l.label}
             </button>
           ))}
         </div>
 
-        <div className="absolute bottom-8 left-8 flex flex-col gap-3">
+        <div className="absolute bottom-8 left-10 flex flex-col gap-3">
           {SOCIALS.map((s) => (
             <button
               key={s.address}
               type="button"
               onClick={() => visitSocial(s.address)}
-              className="font-mono-heading text-xs text-muted hover:text-signal transition-colors w-fit cursor-pointer text-left"
+              className="font-sans text-xs text-muted hover:text-signal transition-colors w-fit cursor-pointer text-left"
             >
               {s.label}
             </button>
@@ -193,7 +190,7 @@ export default function Sidebar({ menuOpen, setMenuOpen }) {
                 key={l.id}
                 type="button"
                 onClick={() => scrollToSection(l.id)}
-                className="font-mono-heading text-sm text-muted hover:text-paper transition-colors w-fit cursor-pointer text-left"
+                className="font-sans text-sm text-muted hover:text-paper transition-colors w-fit cursor-pointer text-left"
               >
                 {l.label}
               </button>
@@ -201,18 +198,22 @@ export default function Sidebar({ menuOpen, setMenuOpen }) {
           </nav>
         </div>
 
-        {/* Desktop Social Links */}
-        <div className="flex flex-col gap-3">
-          {SOCIALS.map((s) => (
-            <button
-              key={s.address}
-              type="button"
-              onClick={() => visitSocial(s.address)}
-              className="font-mono-heading text-xs text-muted hover:text-signal transition-colors w-fit cursor-pointer text-left"
-            >
-              {s.label}
-            </button>
-          ))}
+        {/* Desktop Social Links + Theme Toggle */}
+        <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-3">
+            {SOCIALS.map((s) => (
+              <button
+                key={s.address}
+                type="button"
+                onClick={() => visitSocial(s.address)}
+                className="font-sans text-xs text-muted hover:text-signal transition-colors w-fit cursor-pointer text-left"
+              >
+                {s.label}
+              </button>
+            ))}
+          </div>
+
+          <ThemeToggle />
         </div>
       </aside>
     </>

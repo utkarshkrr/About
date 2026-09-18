@@ -1,10 +1,10 @@
 function SectionLabel({ children }) {
   return (
-    <div className="flex items-center gap-3 mb-8">
-      <span className="h-2 w-2 rounded-full bg-signal" />
-      <p className="font-mono-heading text-base text-muted">
+    <div className="flex items-center gap-4 mb-10">
+      <span className="font-serif italic text-xl text-signal shrink-0">
         {children}
-      </p>
+      </span>
+      <span className="h-px flex-1 bg-line" />
     </div>
   )
 }
@@ -58,9 +58,9 @@ export default function Contact() {
             key={l.label}
             type="button"
             onClick={() => visitLink(l.address)}
-            className="flex items-center justify-between border border-line rounded px-5 py-3 hover:border-muted transition-colors max-w-md cursor-pointer text-left"
+            className="flex items-center justify-between border border-line rounded-xl px-5 py-3.5 hover:border-signal-dim transition-colors max-w-md cursor-pointer text-left"
           >
-            <span className="font-mono-heading text-xs text-muted">
+            <span className="font-sans text-xs text-muted">
               {l.label}
             </span>
 

@@ -17,13 +17,13 @@ export default function Hero() {
   }
 
   return (
-    <section className="pt-16 pb-20 lg:pt-24 lg:pb-28 grid lg:grid-cols-[1.3fr_1fr] gap-12 items-start">
+    <section className="pt-20 pb-24 lg:pt-28 lg:pb-32 grid lg:grid-cols-[1.3fr_1fr] gap-14 items-start">
       <div>
-        <p className="font-mono-heading text-sm text-signal mb-5">
+        <p className="font-serif italic text-lg text-signal mb-4">
           hi, i'm
         </p>
 
-        <h1 className="font-mono-heading text-4xl sm:text-5xl leading-tight text-paper mb-6">
+        <h1 className="font-serif text-5xl sm:text-6xl leading-[1.05] text-paper mb-7">
           Utkarsh Kumar
         </h1>
 
@@ -35,7 +35,7 @@ export default function Hero() {
           <button
             type="button"
             onClick={() => scrollToSection('projects')}
-            className="inline-flex items-center rounded border border-signal px-5 py-2.5 font-mono-heading text-sm text-signal hover:bg-signal hover:text-ink transition-colors cursor-pointer"
+            className="inline-flex items-center rounded-full bg-signal px-6 py-2.5 font-sans text-sm font-medium text-signal-ink hover:opacity-90 transition-opacity cursor-pointer"
           >
             See my work
           </button>
@@ -43,36 +43,36 @@ export default function Hero() {
           <button
             type="button"
             onClick={() => scrollToSection('contact')}
-            className="inline-flex items-center rounded border border-line px-5 py-2.5 font-mono-heading text-sm text-paper hover:border-muted transition-colors cursor-pointer"
+            className="inline-flex items-center rounded-full border border-line px-6 py-2.5 font-sans text-sm text-paper hover:border-muted transition-colors cursor-pointer"
           >
             Get in touch
           </button>
         </div>
       </div>
 
-      <div className="border border-line rounded-lg p-6 bg-surface/40">
-        <div className="flex items-center gap-2 mb-6">
+      <div className="border border-line rounded-2xl p-7 bg-surface/60">
+        <div className="flex items-center gap-2 mb-7">
           <div className="relative group">
-            <span className="block h-2 w-2 rounded-full bg-signal animate-blink cursor-pointer" />
+            <span className="block h-1.5 w-1.5 rounded-full bg-signal animate-blink cursor-pointer" />
 
-            <span className="pointer-events-none absolute left-1/2 top-full z-50 mt-3 ml-16 -translate-x-1/2 whitespace-nowrap rounded border border-signal bg-[#0B0C0E] px-3 py-1.5 font-mono-heading text-[10px] text-signal opacity-0 transition-opacity duration-200 group-hover:opacity-100">
+            <span className="pointer-events-none absolute left-1/2 top-full z-50 mt-3 ml-16 -translate-x-1/2 whitespace-nowrap rounded-md border border-line bg-surface2 px-3 py-1.5 font-sans text-[11px] text-muted opacity-0 transition-opacity duration-200 group-hover:opacity-100">
               welcoming connections
             </span>
           </div>
 
-          <p className="font-mono-heading text-xs text-muted">
+          <p className="font-sans text-xs text-muted">
             active
           </p>
         </div>
 
-        <dl className="flex flex-col gap-4">
+        <dl className="flex flex-col gap-5">
           {STATUS.map((s) => (
             <div key={s.label}>
-              <dt className="font-mono-heading text-xs text-signal-dim mb-1">
+              <dt className="font-sans text-xs text-signal-dim mb-1">
                 {s.label}
               </dt>
 
-              <dd className="text-sm text-paper">
+              <dd className="text-sm text-paper leading-relaxed">
                 {s.value}
               </dd>
             </div>

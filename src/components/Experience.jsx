@@ -1,8 +1,10 @@
 function SectionLabel({ children }) {
   return (
-    <div className="flex items-center gap-3 mb-8">
-      <span className="h-2 w-2 rounded-full bg-signal" />
-      <p className="font-mono-heading text-base text-muted">{children}</p>
+    <div className="flex items-center gap-4 mb-10">
+      <span className="font-serif italic text-xl text-signal shrink-0">
+        {children}
+      </span>
+      <span className="h-px flex-1 bg-line" />
     </div>
   )
 }
@@ -24,7 +26,7 @@ export default function Experience() {
               AICTE Virtual Internship — AWS Cloud
             </p>
 
-            <p className="font-mono-heading text-xs text-signal-dim shrink-0">
+            <p className="font-sans text-xs text-signal-dim shrink-0">
               Oct – Dec 2024
             </p>
           </div>
@@ -43,12 +45,12 @@ export default function Experience() {
                 System Engineer — TCS
               </p>
 
-              <span className="font-mono-heading text-[10px] uppercase tracking-wider text-signal border border-signal/30 px-1.5 py-0.5 rounded">
+              <span className="font-sans text-[10px] text-signal border border-signal-dim/40 px-2 py-0.5 rounded-full">
                 upcoming
               </span>
             </div>
 
-            <p className="font-mono-heading text-xs text-signal-dim shrink-0">
+            <p className="font-sans text-xs text-signal-dim shrink-0">
               Joining soon
             </p>
           </div>

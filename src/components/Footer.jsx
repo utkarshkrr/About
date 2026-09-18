@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Terminal from './Terminal'
 
-const VERSION = 'v26.9.4'
+const VERSION = 'v26.9.5'
 
 export default function Footer() {
   const [terminalOpen, setTerminalOpen] = useState(false)
@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <>
       <footer className="py-10 border-t border-line flex items-center justify-between">
-        <p className="font-mono-heading text-xs text-muted">
+        <p className="font-sans text-xs text-muted">
           © {new Date().getFullYear()}{' '}
           <a href="#">
             <span className="text-paper">utkarsh</span>
@@ -20,7 +20,7 @@ export default function Footer() {
 
         <button
           onClick={() => setTerminalOpen(true)}
-          className="font-mono-heading text-xs text-muted hover:text-paper transition-colors cursor-pointer hover:underline animate-blink"
+          className="font-mono-heading text-xs text-muted hover:text-signal transition-colors cursor-pointer hover:underline animate-blink"
           aria-label="Open terminal"
         >
           {VERSION.split('.').map((part, index) => (
