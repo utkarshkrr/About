@@ -92,6 +92,7 @@ export default function Sidebar({
           <span className="text-paper">
             utkarsh
           </span>
+
           <span className="text-signal">
             krr
           </span>
@@ -350,6 +351,9 @@ export default function Sidebar({
             DESKTOP BOTTOM
         ========================== */}
         <div className="flex flex-col gap-5">
+          {/* Theme Toggle */}
+          <ThemeToggle />
+
           {/* Social Links */}
           <div className="flex flex-col gap-3">
             {SOCIALS.map((s) => (
@@ -374,9 +378,6 @@ export default function Sidebar({
               </button>
             ))}
           </div>
-
-          {/* Theme Toggle */}
-          <ThemeToggle />
         </div>
       </aside>
     </>
