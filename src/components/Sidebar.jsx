@@ -92,7 +92,6 @@ export default function Sidebar({
           <span className="text-paper">
             utkarsh
           </span>
-
           <span className="text-signal">
             krr
           </span>
@@ -212,13 +211,12 @@ export default function Sidebar({
           top-16
           right-0
           z-50
-          h-[calc(100vh-4rem)]
+          h-[calc(100dvh-4rem)]
           w-72
           border-l
           border-line
           px-10
-          py-8
-          overflow-hidden
+          py-10
           transform
           transition-transform
           duration-300
@@ -231,7 +229,7 @@ export default function Sidebar({
         `}
       >
         {/* Navigation */}
-        <div className="flex flex-col gap-5">
+        <div className="flex flex-col gap-6">
           {LINKS.map((l) => (
             <button
               key={l.id}
@@ -262,19 +260,19 @@ export default function Sidebar({
         <div
           className="
             absolute
-            bottom-6
+            bottom-8
             left-10
             right-10
             flex
             flex-col
-            gap-4
+            gap-6
           "
         >
           {/* Theme Toggle */}
           <ThemeToggle />
 
           {/* Social Links */}
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-3">
             {SOCIALS.map((s) => (
               <button
                 key={s.address}
