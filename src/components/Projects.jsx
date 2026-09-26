@@ -1,10 +1,10 @@
 function SectionLabel({ children }) {
   return (
-    <div className="flex items-center gap-4 mb-10">
+    <div data-reveal className="flex items-center gap-4 mb-10">
       <span className="font-serif italic text-xl text-signal shrink-0">
         {children}
       </span>
-      <span className="h-px flex-1 bg-line" />
+      <span data-reveal="line" className="h-px flex-1 bg-line" />
     </div>
   )
 }
@@ -52,14 +52,12 @@ export default function Projects() {
     >
       <SectionLabel>projects</SectionLabel>
 
-      <div className="flex flex-col gap-6">
+      <div data-stagger className="flex flex-col gap-6">
         {PROJECTS.map((p) => {
           const isFeatured = p.featured === 'true'
 
           return (
-            <div
-              key={p.name}
-              className={
+            <div key={p.name} data-tilt="2.5" data-spot className={
                 isFeatured
                   ? 'relative border border-signal-dim/50 rounded-2xl px-6 pt-10 pb-6 bg-surface/40 hover:border-signal transition-colors'
                   : 'border border-line rounded-2xl p-6 hover:border-muted transition-colors'
@@ -90,7 +88,7 @@ export default function Projects() {
 
               {/* Featured highlight */}
               {isFeatured && p.highlight && (
-                <p className="text-sm text-signal mb-4">
+                <p data-count className="text-sm text-signal mb-4">
                   {p.highlight}
                 </p>
               )}
@@ -108,8 +106,7 @@ export default function Projects() {
                   ))}
                 </ul>
 
-                <button
-                  type="button"
+                <button data-magnetic type="button"
                   onClick={() => visitRepository(p.address)}
                   className="inline-flex items-center rounded-full border border-line px-4 py-2 font-sans text-sm text-muted hover:border-signal-dim hover:text-signal transition-colors shrink-0 cursor-pointer"
                 >

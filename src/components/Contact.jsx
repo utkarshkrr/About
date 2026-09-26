@@ -1,10 +1,10 @@
 function SectionLabel({ children }) {
   return (
-    <div className="flex items-center gap-4 mb-10">
+    <div data-reveal className="flex items-center gap-4 mb-10">
       <span className="font-serif italic text-xl text-signal shrink-0">
         {children}
       </span>
-      <span className="h-px flex-1 bg-line" />
+      <span data-reveal="line" className="h-px flex-1 bg-line" />
     </div>
   )
 }
@@ -52,10 +52,11 @@ export default function Contact() {
         The fastest way to reach me is by email.
       </p>
 
-      <div className="flex flex-col gap-4 mb-10">
+      <div data-stagger className="flex flex-col gap-4 mb-10">
         {LINKS.map((l) => (
           <button
             key={l.label}
+            data-spot
             type="button"
             onClick={() => visitLink(l.address)}
             className="flex items-center justify-between border border-line rounded-xl px-5 py-3.5 hover:border-signal-dim transition-colors max-w-md cursor-pointer text-left"
@@ -67,8 +68,8 @@ export default function Contact() {
             <span className="text-sm">
               {l.value === 'utkarshkrr' ? (
                 <>
-                  <span className="text-paper">utkarsh</span>
-                  <span className="text-signal">krr</span>
+                  <span className="text-paper font-mono-heading">utkarsh</span>
+                  <span className="text-signal font-mono-heading">krr</span>
                 </>
               ) : (
                 <span className="text-signal">{l.value}</span>

@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { initMotion } from './motion'
 import LoadingScreen from './components/LoadingScreen'
 import Sidebar from './components/Sidebar'
 import Hero from './components/Hero'
@@ -12,6 +13,8 @@ import NotFound from './components/NotFound'
 
 export default function App() {
   const [menuOpen, setMenuOpen] = useState(false)
+
+  useEffect(() => initMotion(), [])
 
   const isHomePage =
     window.location.pathname === '/' ||
@@ -33,7 +36,7 @@ export default function App() {
               menuOpen ? 'blur-[2px]' : 'blur-0'
             }`}
           >
-            <div className="mx-auto max-w-4xl px-6 sm:px-10 lg:px-12">
+            <div data-skew className="mx-auto max-w-4xl px-6 sm:px-10 lg:px-12">
               <Hero />
               <About />
               <Skills />

@@ -25,6 +25,8 @@ export default function LoadingScreen() {
                     document.body.style.overflow = ''
 
                     setFadeOut(true)
+                    document.documentElement.dataset.ready = '1'
+                    window.dispatchEvent(new Event('app-ready'))
 
                     // Remove loader after fade
                     setTimeout(() => {

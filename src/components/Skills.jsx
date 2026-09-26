@@ -1,10 +1,10 @@
 function SectionLabel({ children }) {
   return (
-    <div className="flex items-center gap-4 mb-10">
+    <div data-reveal className="flex items-center gap-4 mb-10">
       <span className="font-serif italic text-xl text-signal shrink-0">
         {children}
       </span>
-      <span className="h-px flex-1 bg-line" />
+      <span data-reveal="line" className="h-px flex-1 bg-line" />
     </div>
   )
 }
@@ -41,11 +41,11 @@ export default function Skills() {
     <section id="skills" className="py-16 lg:py-20 border-t border-line scroll-mt-20">
       <SectionLabel>skills</SectionLabel>
 
-      <div className="grid sm:grid-cols-2 gap-x-10 gap-y-10">
+      <div data-stagger className="grid sm:grid-cols-2 gap-x-10 gap-y-10">
         {CATEGORIES.map((cat) => (
           <div key={cat.name}>
             <h3 className="font-sans text-xs text-signal-dim mb-3">{cat.name}</h3>
-            <ul className="flex flex-wrap gap-2">
+            <ul data-prox data-stagger className="flex flex-wrap gap-2">
               {cat.items.map((item) => (
                 <li
                   key={item}

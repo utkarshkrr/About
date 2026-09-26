@@ -1,10 +1,10 @@
 function SectionLabel({ children }) {
   return (
-    <div className="flex items-center gap-4 mb-10">
+    <div data-reveal className="flex items-center gap-4 mb-10">
       <span className="font-serif italic text-xl text-signal shrink-0">
         {children}
       </span>
-      <span className="h-px flex-1 bg-line" />
+      <span data-reveal="line" className="h-px flex-1 bg-line" />
     </div>
   )
 }
@@ -50,7 +50,7 @@ export default function About() {
     >
       <SectionLabel>about</SectionLabel>
 
-      <p className="max-w-prose text-base text-paper leading-relaxed mb-14">
+      <p data-reveal className="max-w-prose text-base text-paper leading-relaxed mb-14">
         I'm a computer science graduate with hands-on experience across
         machine learning and full-stack development. My work spans training
         deep learning models, building MERN applications, and working with
@@ -64,11 +64,11 @@ export default function About() {
             education
           </h3>
 
-          <ul className="flex flex-col gap-5">
+          <ul data-stagger className="flex flex-col gap-5">
             {EDUCATION.map((e) => (
               <li
                 key={e.degree}
-                className="border-l border-line pl-4"
+                data-fill className="border-l border-line pl-4"
               >
                 <p className="text-sm text-paper">
                   {e.degree}
@@ -83,7 +83,7 @@ export default function About() {
                     {e.period}
                   </p>
 
-                  <p className="font-sans text-xs text-muted">
+                  <p data-count className="font-sans text-xs text-muted">
                     {e.detail}
                   </p>
                 </div>
@@ -91,8 +91,7 @@ export default function About() {
             ))}
           </ul>
 
-          <button
-            type="button"
+          <button data-magnetic type="button"
             onClick={viewResume}
             className="inline-flex items-center rounded-full border border-line px-5 py-2.5 mt-6 font-sans text-sm text-muted hover:border-signal-dim hover:text-signal transition-colors cursor-pointer"
           >
@@ -105,11 +104,11 @@ export default function About() {
             certifications
           </h3>
 
-          <ul className="flex flex-col gap-5">
+          <ul data-stagger className="flex flex-col gap-5">
             {CERTIFICATIONS.map((c) => (
               <li
                 key={c.name}
-                className="border-l border-line pl-4"
+                data-fill className="border-l border-line pl-4"
               >
                 <p className="text-sm text-paper">
                   {c.name}

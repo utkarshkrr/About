@@ -61,7 +61,7 @@ export default function Sidebar({
 
       setTimeout(() => {
         setBinaryGlitch(false)
-      }, 1200)
+      }, 2400)
     } else {
       setMenuOpen(false)
 
@@ -84,7 +84,7 @@ export default function Sidebar({
       aria-label="Go to top"
     >
       {binaryGlitch ? (
-        <span className="text-signal">
+        <span className="text-signal animate-blink-italic">
           {BINARY}
         </span>
       ) : (
@@ -234,6 +234,7 @@ export default function Sidebar({
           {LINKS.map((l) => (
             <button
               key={l.id}
+              data-nav={l.id}
               type="button"
               onClick={() =>
                 scrollToSection(l.id)
@@ -326,6 +327,7 @@ export default function Sidebar({
             {LINKS.map((l) => (
               <button
                 key={l.id}
+              data-nav={l.id}
                 type="button"
                 onClick={() =>
                   scrollToSection(l.id)

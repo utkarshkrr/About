@@ -106,9 +106,226 @@ body {
   animation: blink 1.8s ease-in-out infinite;
 }
 
+@keyframes blinkItalic {
+  0%, 20% {
+    opacity: 1;
+    font-style: normal;
+  }
+  25% {
+    opacity: 0.25;
+    font-style: italic;
+  }
+  30%, 45% {
+    opacity: 1;
+    font-style: italic;
+  }
+  50% {
+    opacity: 0.25;
+    font-style: normal;
+  }
+  55%, 70% {
+    opacity: 1;
+    font-style: normal;
+  }
+  75% {
+    opacity: 0.25;
+    font-style: italic;
+  }
+  80%, 95% {
+    opacity: 1;
+    font-style: italic;
+  }
+  100% {
+    opacity: 0;
+    font-style: normal;
+  }
+}
+
+.animate-blink-italic {
+  animation: blinkItalic 2.4s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
     transition: none !important;
     animation: none !important;
   }
+}
+
+/* =========================================================
+   MOTION  (driven by src/motion.js via data-* attributes)
+========================================================= */
+
+.scroll-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  z-index: 300;
+  background: rgb(var(--color-accent));
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  pointer-events: none;
+}
+
+.cursor-ring {
+  position: fixed;
+  top: -17px;
+  left: -17px;
+  width: 24px;
+  height: 24px;
+  border: 1px solid rgb(var(--color-accent) / 0.7);
+  border-radius: 50%;
+  z-index: 9998;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s, scale 0.25s ease, background-color 0.25s ease;
+}
+
+.cursor-ring.hot {
+  scale: 1.5;
+  background-color: rgb(var(--color-accent) / 0.12);
+}
+
+/* scroll reveal */
+@keyframes rise {
+  from { opacity: 0; translate: 0 24px; }
+}
+
+[data-reveal] { opacity: 0; }
+
+[data-reveal].in {
+  opacity: 1;
+  animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+  animation-delay: calc(var(--i, 0) * 80ms);
+}
+
+/* section rules draw themselves */
+[data-reveal='line'] {
+  opacity: 1;
+  scale: 0 1;
+  transform-origin: left;
+  transition: scale 1.1s cubic-bezier(0.2, 0.7, 0.2, 1) 0.15s, background-color 0.35s ease;
+}
+
+[data-reveal='line'].in { scale: 1 1; animation: none; }
+
+/* hero name: letters rise in after the loader, then dodge the cursor */
+.letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(0.55em) rotate(4deg);
+  transition: opacity 0.7s ease, transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: calc(var(--i, 0) * 45ms);
+  color: color-mix(in srgb, rgb(var(--color-accent)) calc(var(--near, 0) * 100%), rgb(var(--color-text)));
+}
+
+html[data-ready] .letter { opacity: 1; transform: none; }
+
+/* magnetic buttons */
+[data-magnetic] {
+  transition: translate 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.15s ease,
+    background-color 0.35s ease, border-color 0.35s ease, color 0.2s ease;
+}
+
+/* tilt cards */
+[data-tilt] {
+  transition: transform 0.25s ease-out, border-color 0.35s ease, background-color 0.35s ease;
+}
+
+/* cursor spotlight + glowing border */
+[data-spot] { position: relative; }
+
+[data-spot]::before,
+[data-spot]::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+[data-spot]::after {
+  background: radial-gradient(360px circle at var(--sx, 50%) var(--sy, 50%), rgb(var(--color-accent) / 0.1), transparent 60%);
+}
+
+[data-spot]::before {
+  padding: 1px;
+  background: radial-gradient(220px circle at var(--sx, 50%) var(--sy, 50%), rgb(var(--color-accent) / 0.9), transparent 70%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+}
+
+[data-spot][data-hot]::before,
+[data-spot][data-hot]::after { opacity: 1; }
+
+/* skill pills light up with the cursor */
+[data-prox] > * {
+  border-color: color-mix(in srgb, rgb(var(--color-accent)) calc(var(--near, 0) * 80%), rgb(var(--color-border)));
+  color: color-mix(in srgb, rgb(var(--color-text)) calc(var(--near, 0) * 100%), rgb(var(--color-muted)));
+}
+
+/* accent rails */
+[data-fill],
+[data-draw] { position: relative; }
+
+[data-fill]::before,
+[data-draw]::before {
+  content: '';
+  position: absolute;
+  left: -1px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgb(var(--color-accent));
+  transform-origin: top;
+  transform: scaleY(var(--p, 0));
+  transition: transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+[data-fill].in { --p: 1; }
+[data-draw]::before { transition-duration: 0.25s; }
+
+[data-count] { font-variant-numeric: tabular-nums; }
+
+/* scroll-spy nav */
+[data-nav]::before {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 1px;
+  margin-right: 0;
+  vertical-align: middle;
+  background: rgb(var(--color-accent));
+  transition: width 0.35s cubic-bezier(0.2, 0.7, 0.2, 1), margin 0.35s ease;
+}
+
+[data-nav][data-active] { color: rgb(var(--color-text)); }
+[data-nav][data-active]::before { width: 16px; margin-right: 8px; }
+
+/* theme switch: circular ripple from the toggle */
+::view-transition-old(root),
+::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
+::view-transition-old(root) { z-index: 1; }
+::view-transition-new(root) { z-index: 9999; }
+html.theme-switching *:not([data-theme-toggle], [data-theme-toggle] *) { transition: none !important; }
+
+/* keep the toggle and cursor ring out of the ripple so they stay live */
+html.theme-switching [data-theme-toggle] { view-transition-name: theme-toggle; }
+html.theme-switching .cursor-ring { view-transition-name: cursor-ring; }
+::view-transition-group(theme-toggle),
+::view-transition-group(cursor-ring),
+::view-transition-new(theme-toggle),
+::view-transition-new(cursor-ring) { animation: none; }
+::view-transition-old(theme-toggle),
+::view-transition-old(cursor-ring) { display: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] { opacity: 1 !important; translate: none !important; scale: none !important; animation: none !important; }
+  .letter { opacity: 1; transform: none; }
 }

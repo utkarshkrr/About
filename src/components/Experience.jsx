@@ -1,10 +1,10 @@
 function SectionLabel({ children }) {
   return (
-    <div className="flex items-center gap-4 mb-10">
+    <div data-reveal className="flex items-center gap-4 mb-10">
       <span className="font-serif italic text-xl text-signal shrink-0">
         {children}
       </span>
-      <span className="h-px flex-1 bg-line" />
+      <span data-reveal="line" className="h-px flex-1 bg-line" />
     </div>
   )
 }
@@ -17,7 +17,7 @@ export default function Experience() {
     >
       <SectionLabel>experience</SectionLabel>
 
-      <div className="border-l border-line pl-4 space-y-8">
+      <div data-draw data-stagger className="border-l border-line pl-4 space-y-8">
 
         {/* Internship */}
         <div>
